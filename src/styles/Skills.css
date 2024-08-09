@@ -1,0 +1,115 @@
+.skills-section {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.skills-container {
+  margin: 10px auto; /* Centra el contenedor de habilidades */
+  padding-bottom: 5px;
+  display: flex;
+  font-weight: bold;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* Espacio entre los ítems de habilidades */
+  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); /* Degradado de negro transparente a transparente */
+}
+
+.skills-section h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title {
+  color: #00e1ff;
+  margin-top: 0;
+  font-size: 2rem;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.skill-item {
+  text-align: center;
+  width: 80px; /* Ajusta el tamaño de los ítems de habilidades */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .skills-container {
+    gap: 30px; /* Reducción del espacio entre ítems en pantallas medianas */
+  }
+  
+  .skill-item {
+    width: 70px; /* Ajusta el tamaño de los ítems en pantallas medianas */
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-container {
+    gap: 20px; /* Reducción del espacio entre ítems en pantallas más pequeñas */
+  }
+  
+  .skill-item {
+    width: 60px; /* Ajusta el tamaño de los ítems en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    gap: 15px; /* Reducción del espacio entre ítems en pantallas pequeñas */
+  }
+  
+  .skill-item {
+    width: 50px; /* Ajusta el tamaño de los ítems en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    gap: 12px; /* Reducción del espacio entre ítems en pantallas muy pequeñas */
+  }
+  
+  .skill-item {
+    width: 50px; /* Ajusta el tamaño de los ítems en pantallas muy pequeñas */
+    padding: 5px;
+  }
+}
+
+.skill-icon {
+  width: 100%;
+  height: 100px; /* Asegura que todos los iconos tengan la misma altura */
+  margin: 5px auto;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  animation: pulse 1.5s infinite alternate; /* Animación de pulsación infinita */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon:hover {
+  transform: scale(1.2);
+}
+
+.skill-icon img {
+  width: 80%; /* Ajusta el tamaño de la imagen dentro del contenedor */
+  height: auto;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 12px;
+  color: white;
+  margin-top: 10px; /* Añade margen superior para separar el título del icono */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

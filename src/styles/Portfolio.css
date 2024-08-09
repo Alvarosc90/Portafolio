@@ -1,0 +1,49 @@
+.Portfolio-container {
+  position: absolute;
+  top: 23%;
+  left: 27%; /* Centra horizontalmente */
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.Portfolio-text {
+  font-size: 2.5vw; /* Tamaño del texto responsivo basado en el ancho del viewport */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #7849a6;
+  font-family: "Archivo Black", sans-serif;
+  font-style: normal;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .Portfolio-container {
+    position: absolute; /* Cambia a posición relativa en dispositivos móviles */
+    top: auto; /* Elimina el ajuste de la posición superior */
+    left: auto; /* Elimina el ajuste de la posición izquierda */
+    transform: none; /* Elimina la transformación */
+    padding-top: 50px;
+    margin-bottom: -50px;
+  }
+
+  .Portfolio-text {
+    font-size: 10vw; /* Tamaño del texto responsivo para dispositivos móviles */
+  }
+}
+
+/* Media query para tablets */
+@media (max-width: 1024px) {
+  .Portfolio-container {
+    position: relative; /* Cambia a posición relativa en dispositivos móviles */
+    top: auto; /* Elimina el ajuste de la posición superior */
+    left: auto; /* Elimina el ajuste de la posición izquierda */
+    transform: none; /* Elimina la transformación */
+    padding-top: -50px;
+   }
+  .Portfolio-text {
+    transform: none; /* Elimina la transformación */
+    font-size: 6vw; /* Tamaño del texto responsivo para tablets */
+
+  }
+}

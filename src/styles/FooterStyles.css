@@ -1,0 +1,58 @@
+.footer-container {
+  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); /* Degradado de negro transparente a transparente */
+    color: #00e1ff;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
+  .footer-container h2 {
+    margin-bottom: 10px;
+    font-size: 14px; /* Tamaño de letra aumentado */
+    color: #00e1ff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center; /* Alinea el título al centro */
+  }
+  
+  .social-icons {
+    margin-bottom: 20px;
+  }
+  
+  .social-icon {
+    font-size: 32px; /* Tamaño de los iconos aumentado */
+    margin: 0 15px;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transición añadido */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
+  }
+  
+  .footer-nav {
+    margin-bottom: 20px;
+  }
+  
+  .footer-nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12px; /* Tamaño de letra aumentado */
+    transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transición añadido */
+    display: inline-block; /* Asegura que los enlaces se comporten correctamente */
+  }
+  
+  .footer-nav-link:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
+    color: #00e1ff;
+  }
+  
+  .footer-nav-link svg {
+    margin-right: 5px;
+  }
+  
+  .copyright {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,54 @@
+.about-container {
+  display: flex;
+  flex-direction: column; /* Cambia la dirección del flexbox a columna en dispositivos móviles */
+  align-items: center;
+  text-align: left;
+  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); /* Degradado de negro transparente a transparente */
+  color: #F26716;
+  margin: 10px auto;
+  border-radius: 5px;
+  max-width: 100%; /* Ancho máximo del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+
+}
+
+.tittle {
+  color: #00e1ff;
+  font-size: 2rem; /* Tamaño de fuente para el título */
+  margin-bottom: 20px; /* Espacio inferior del título */
+  font-family: "Archivo Black", sans-serif;
+  text-align: center; /* Alinea el título al centro */
+  align-self: flex-start; /* Alinea el título al inicio del contenedor */
+  margin-top: 1px; /* Espacio superior del título */
+}
+
+.textabout {
+  color: white; 
+  font-size: 0.9rem; /* Tamaño de fuente para el texto */
+  line-height: 1.6; /* Altura de línea para el texto */
+  max-width: 80%; /* Ancho máximo del texto */
+  text-align: center; /* Alinea el texto al centro */
+  margin: 0 auto; /* Centra el contenedor de texto */
+  padding-bottom: 10px;
+  margin-top: -15px;
+}
+
+.textabout + .textabout {
+  margin-top: 20px; /* Espacio entre párrafos */
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .tittle {
+    font-size: 1.5rem; /* Tamaño de fuente del título en pantallas pequeñas */
+  }
+
+  .textabout {
+    font-size: 0.8rem; /* Tamaño de fuente del texto en pantallas pequeñas */
+  }
+}

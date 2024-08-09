@@ -1,0 +1,371 @@
+.new-project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 0 40px;
+  color: #ff3c50;
+}
+
+new-projects-container{
+  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); 
+}
+
+.new-projects-container h2{
+  color: #00e1ff;
+  font-size: 2rem; /* Tamaño de fuente para el título */
+  margin-bottom: 20px; /* Espacio inferior del título */
+  font-family: "Archivo Black", sans-serif;
+  text-align: center; /* Alinea el título al centro */
+  align-self: flex-start; /* Alinea el título al inicio del contenedor */
+  margin-top: 1px; /* Espacio superior del título */
+}
+
+.new-project-card {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  opacity: 0.9;
+  cursor: pointer;
+  position: relative;
+  width: 20%;
+  flex-shrink: 0;
+}
+
+.new-project-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.new-image-container {
+  width: 80%;
+  height: 160px;
+  position: relative;
+}
+
+.new-project-image {
+  width: 140%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.new-project-card:hover .new-project-image {
+  transform: scale(1.05);
+}
+
+.new-project-details {
+  text-align: left;
+  margin-top: 10px;
+  position: relative;
+}
+
+.new-project-details h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+ 
+}
+
+.new-project-details p {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.new-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.new-tech-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .new-projects-container{
+    display: block;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .new-project-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .new-project-card {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  .new-image-container {
+    height: 150px;
+  }
+
+  .new-project-image {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .new-project-details {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .new-project-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .new-project-details p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .new-project-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+  }
+
+  .new-project-card {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .new-image-container {
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .new-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .new-project-details {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .new-project-details h3 {
+    font-size: 1rem;
+  }
+
+  .new-project-details p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .nav-button {
+    font-family: 'Montserrat', sans-serif;  
+    background-color: rgba(25, 25, 255, 0.295);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100px; /* Fijar el ancho de los botones para que sean del mismo tamaño */
+    display: flex; /* Añadido */
+    align-items: center; /* Añadido */
+    justify-content: center; /* Añadido */
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 0, 0, 0.418);
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-buttons {
+    display: none; /* Ocultamos los botones de navegación en pantallas grandes */
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .new-project-grid {
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+  }
+
+  .new-project-card {
+    width: 90%;
+    margin: 0 auto;
+    display: none; /* Ocultamos todos los proyectos inicialmente */
+    text-align: center;
+    padding: 20px; /* Fijamos el tamaño del padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fijamos la sombra */
+  }
+
+  .new-project-card.active {
+    display: block; /* Solo mostramos el proyecto activo */
+  }
+
+  .new-image-container {
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .new-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .new-project-details {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .new-project-details h3 {
+    font-size: 1rem;
+  }
+
+  .new-project-details p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    padding-bottom: 25px;
+  }
+
+  .nav-button {
+    background-color: rgba(25, 25, 255, 0.295);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 0, 0, 0.418);
+  }
+}
+
+@media (max-width: 768px) {
+  .new-project-grid {
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+  }
+
+  .new-project-card {
+    width: 90%;
+    margin: 0 auto;
+    display: none; /* Ocultamos todos los proyectos inicialmente */
+    text-align: center;
+    padding: 20px; /* Fijamos el tamaño del padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fijamos la sombra */
+  }
+
+  .new-project-card.active {
+    display: block; /* Solo mostramos el proyecto activo */
+  }
+
+  .new-image-container {
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .new-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .new-project-details {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  .new-project-details h3 {
+    font-size: 1rem;
+  }
+
+  .new-project-details p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .nav-button {
+    background-color: rgba(25, 25, 255, 0.295);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 0, 0, 0.418);
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-buttons {
+    display: none; /* Ocultamos los botones de navegación en pantallas grandes */
+  }
+}

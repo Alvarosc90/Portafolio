@@ -1,0 +1,110 @@
+.contact-form-container {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0));
+  border-radius: 10px;
+  color: white;
+  margin-top: -30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2 {
+  color: #8FB2BF;
+  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.contacto{
+  font-weight: bold;
+  color: #00e1ff;
+  margin-top: 0;
+  font-size: 2rem;
+  font-family: "Archivo Black", sans-serif;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%; /* Asegura que los elementos del formulario ocupen toda la anchura */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 40%; /* Ajustado al 100% para ocupar todo el espacio disponible */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+
+textarea#message {
+  height: 100px; /* Reducido el tamaño del textarea del mensaje */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.submit-button {
+  font-weight: bold;
+  width: 50%;
+  max-width: 200px;
+  background-color: #dc3546b7; /* Color rojo semitransparente */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #dc3545; /* Cambia de color al pasar el cursor */
+}
+
+.mensaje {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  input[type="text"],
+input[type="email"],
+textarea {
+  width: 80%; /* Ajustado al 100% para ocupar todo el espacio disponible */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+}

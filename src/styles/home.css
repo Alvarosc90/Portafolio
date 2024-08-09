@@ -1,0 +1,14 @@
+.section-container {
+    width: 100%;
+    position: relative;
+    margin-top: 70px;
+    opacity: 0;
+    transform: translateX(-50px); /* Desplaza la sección hacia la izquierda */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve la sección a su posición original */
+  }
+  

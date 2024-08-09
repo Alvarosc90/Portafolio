@@ -1,0 +1,24 @@
+.section-container {
+  width: 100%;
+  position: relative;
+  margin-top: 70px;
+}
+
+.profile-image-container {
+  width: 240px; /* Tamaño original de la imagen */
+  height: 240px; /* Tamaño original de la imagen */
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  position: relative; /* Posiciona el contenedor */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Asegura que la imagen se muestre como bloque */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.profile-image:hover {
+  transform: scale(1.1); /* Agranda la imagen al 110% */
+}

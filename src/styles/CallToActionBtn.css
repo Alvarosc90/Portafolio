@@ -1,0 +1,80 @@
+.Name {
+  color: #00e1ff;
+  font-size: 20px;
+  margin-top: -20px; /* Ajusta el margen superior según sea necesario */
+  opacity: 0; /* Inicialmente oculto */
+  animation: fadeInUp 0.5s ease forwards; /* Animación de aparecer hacia arriba */
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+.Name h1{
+  font-size: 30px;
+  margin-bottom: -10px;
+font-weight: bold;
+}
+
+.Name p{
+  font-size: 17px;
+  color: #8FB2BF;
+  font-weight: bold;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Desde arriba de -20px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* A posición final */
+  }
+}
+
+.cta-button,
+.cta-button1 {
+  margin-bottom: 10px;
+  color: #fff; /* Color de texto */
+  padding: 10px 20px; /* Espacio interior del botón */
+  font-size: 16px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave del color de fondo y transformación */
+  margin-right: 10px; /* Margen derecho entre botones */
+  text-decoration: none; /* Quita la decoración de texto en caso de estar en un enlace */
+  text-align: center; /* Centra el texto dentro del botón */
+  line-height: 1; /* Ajusta la altura de línea */
+  width: 180px; /* Ancho fijo para todos los botones */
+  display: inline-block; /* Para que el ancho del botón se ajuste al contenido */
+  font-family: 'Montserrat', sans-serif;  
+
+}
+
+.cta-button {
+  background-color: #854bbfc0; /* Color de fondo del botón */
+}
+
+.cta-button:hover {
+  background-color: #854bbf;  /* Cambio de color de fondo al pasar el cursor */
+  transform: scale(0.95); /* Reduce el tamaño del botón al 95% al pasar el cursor */
+}
+
+.cta-button.download,
+.cta-button1.download {
+  background-color: #dc3545; /* Color de fondo del botón de descarga */
+}
+
+.cta-button.download:hover,
+.cta-button1.download:hover {
+  background-color: #c82333; /* Cambio de color de fondo al pasar el cursor para descarga */
+  transform: scale(0.95); /* Reduce el tamaño del botón al 95% al pasar el cursor */
+}
+
+.cta-button1 {
+  background-color: #ce1846af; /* Color de fondo del segundo botón */
+}
+
+.cta-button1:hover {
+  background-color: #ce1846; /* Cambio de color de fondo al pasar el cursor */
+  transform: scale(0.95); /* Reduce el tamaño del botón al 95% al pasar el cursor */
+}

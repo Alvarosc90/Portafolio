@@ -1,0 +1,13 @@
+.logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    will-change: transform; /* Optimización para animaciones */
+  }
+  
+  .logo-image {
+    width: 200px; /* Ajusta el tamaño del logo según tu necesidad */
+    height: auto; /* Ajusta el tamaño del logo según tu necesidad */
+    transition: transform 0.6s linear; /* Transición suave para la rotación */
+  }
+  
