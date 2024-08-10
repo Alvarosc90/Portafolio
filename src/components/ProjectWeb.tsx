@@ -7,6 +7,9 @@ import image6 from '../images/GuitarLA.png';
 import image7 from '../images/css.webp';
 import image8 from '../images/html.webp';
 import image9 from '../images/node.png';
+import image10 from '../images/database.png';
+import image11 from '../images/1.png';
+import image12 from '../images/omnidate.png';
 
 export type ProjectDataItem = {
     title: string;
@@ -17,6 +20,20 @@ export type ProjectDataItem = {
   };
   
   const ProjectData: ProjectDataItem[] = [
+    {
+      title: 'Sistema de control para empesa de seguros',
+      description: 'Sistema CRUD para empresa de seguros,usando JWT, Cokieparser, use MERN para la realizacion del proyecto de la empresa, para el front use JS, y React',
+      url: 'Privado',
+      image: image11,
+      technologiesImages: [image1, image2,image7, image8, image9, image10], // Asigna las rutas de las imágenes importadas
+    },
+    {
+      title: 'LandingPage para Consultora de data',
+      description: 'Promocion de servicios de una consultora de Data, realizado con react',
+      url: 'https://omni-data.vercel.app/',
+      image: image12,
+      technologiesImages: [image1,image7, image8], // Asigna las rutas de las imágenes importadas
+    },
     {
       title: 'Carrito de Compras',
       description: 'Carrito de Compras Realizado con React y Typescript',

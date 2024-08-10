@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 20px;
-  padding: 0 40px;
+  gap: 10px;
+  padding: 0 20px;
   color: #ff3c50;
 }
 
@@ -29,7 +29,7 @@ new-projects-container{
   opacity: 0.9;
   cursor: pointer;
   position: relative;
-  width: 20%;
+  width: calc(25% - 10px); /* 4 columnas */
   flex-shrink: 0;
 }
 
