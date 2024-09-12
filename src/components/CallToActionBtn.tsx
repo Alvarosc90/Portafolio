@@ -21,7 +21,7 @@ const CallToActionBtn: React.FC<{ scrollToContact: () => void }> = ({ scrollToCo
           Contacto
         </button>
       </a>
-      <a href="https://drive.google.com/file/d/1POmgLkPlmpjLaE8Rwt7n_Zh6zmDkSisq/view?usp=sharing" download="CV-Alvaro-Soria.pdf">
+      <a href="https://drive.google.com/file/d/1C_U0-HF89_8jXNXUDWy127URbctENiGB/view?usp=sharing" download="CV-Alvaro-Soria.pdf">
         <button className="cta-button1" onClick={handleDownloadClick}>
           <FontAwesomeIcon icon={faFileDownload} style={{ marginRight: '5px' }} />
           Descargar CV
