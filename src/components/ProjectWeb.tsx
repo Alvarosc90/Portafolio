@@ -22,6 +22,7 @@ export type ProjectDataItem = {
   description: string;
   image: string[]; // Ahora es un array de rutas de imágenes
   technologiesImages: string[];
+  
 };
 
   

@@ -7,10 +7,6 @@ const Projects = () => {
     window.open(url, '_blank');
   };
 
-  const handleProjectClickWeb = (url: string) => {
-    window.open(url, '_blank');
-  };
-
   return (
     <section className="new-projects-container">
       <h2>Projects Web</h2>
@@ -19,7 +15,6 @@ const Projects = () => {
           <div
             key={index}
             className="new-project-card"
-            onClick={() => handleProjectClickWeb(project.url)}
           >
             <div className="new-image-container">
               <img
