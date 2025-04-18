@@ -1,10 +1,6 @@
 // src/components/ProjectData.tsx
 import image1 from '../images/react.png';
 import image2 from '../images/javascript.png';
-import image3 from '../images/trello.png';
-import image4 from '../images/Encript.png';
-import image5 from '../images/horizon.png';
-import image6 from '../images/GuitarLA.png';
 import image7 from '../images/css.webp';
 import image8 from '../images/html.webp';
 import image9 from '../images/node.png';
