@@ -41,6 +41,7 @@
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   background-color: rgba(255,255,255,0.15);
+
 }
 
 /* 3. Zoom suave de la imagen solo al hacer hover */
@@ -51,7 +52,7 @@
   transition: transform 0.3s ease;
 }
 .new-project-card:hover .new-project-image {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 /* 4. Realza el título al hacer hover */
@@ -108,7 +109,7 @@
 }
 @media (max-width: 768px) {
   .new-projects-container{
-        margin-right: -30px;
+    margin-right: -30px;
     margin-left: 60px;
   }
   .new-project-grid {

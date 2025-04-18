@@ -22,21 +22,21 @@ export type ProjectDataItem = {
 const ProjectData: ProjectDataItem[] = [
   {
     title: 'Sistema de Clima Laboral',
-    description: 'Sistema interno para encuestas laborales.',
+    description: 'Sistema interno para encuestas laborales, incluí un sistema de login con estadisticas usando la biblioteca de React Charts',
     image: image15,
     url: 'https://example.com/clima-laboral',
     technologiesImages: [image1, image2, image7, image8, image9, image10],
   },
   {
     title: 'Sistema para Comedor',
-    description: 'Sistema de gestión de menú diario para empleados.',
+    description: 'Sistema de gestión de menú diario para empleados, desde la toma de pedidos,listado de menu a realizar en el dia para los cocineros dependiendo la demanda,luego con un codigo de barras cada empleado firma entrega de su pedido se realiza a travez de un lector de codigo de barras',
     image: image14,
     url: 'https://example.com/comedor',
     technologiesImages: [image1, image2, image7, image8, image9, image10],
   },
   {
     title: 'Sistema Centralizado',
-    description: 'Sistema CRUD de control para CAPEMI.',
+    description: 'Sistema de gestión total para empresa CAPEMI, realice procesos de UX research entre los distintos stakeholders, para tomar los requisitos y sus necesidades para migrar sistemas antiguos a mas modernos, ahorrando tiempo de cargas y administracion de tareas diarias, ademas implemente un sistema de tickets para cada sector, asi la empresa minimiza tiempos y maxima soluciones, cada sector tiene sus interfaces a medida',
     image: image13,
     url: 'https://example.com/centralizado',
     technologiesImages: [image1, image2, image7, image8, image9, image10],
