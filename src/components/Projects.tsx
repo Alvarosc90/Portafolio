@@ -1,4 +1,5 @@
-import '../styles/NewProject.css'; // Asegúrate de que este CSS esté actualizado
+// src/components/Projects.tsx
+import '../styles/NewProject.css';
 import ProjectData from './ProjectData';
 import ProjectWeb from './ProjectWeb';
 
@@ -12,10 +13,7 @@ const Projects = () => {
       <h2>Projects Web</h2>
       <div className="new-project-grid">
         {ProjectWeb.map((project, index) => (
-          <div
-            key={index}
-            className="new-project-card"
-          >
+          <div key={index} className="new-project-card">
             <div className="new-image-container">
               <img
                 src={project.image}
@@ -31,7 +29,7 @@ const Projects = () => {
                   <img
                     key={idx}
                     src={techImage}
-                    alt={`Technology ${idx + 1}`}
+                    alt={`Tech ${idx + 1}`}
                     className="new-tech-icon"
                   />
                 ))}
@@ -64,7 +62,7 @@ const Projects = () => {
                   <img
                     key={idx}
                     src={techImage}
-                    alt={`Technology ${idx + 1}`}
+                    alt={`Tech ${idx + 1}`}
                     className="new-tech-icon"
                   />
                 ))}
