@@ -12,7 +12,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="new-projects-container" id="projects">
+    <section className="new-projects-container">
       <h2>Projects Web</h2>
       <div className="new-project-grid">
         {ProjectWeb.map((project, index) => (

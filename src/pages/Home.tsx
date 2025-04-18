@@ -17,7 +17,6 @@ import '../styles/home.css'; // Importa tu archivo de estilos CSS para Home
 
 const Home: React.FC = () => {
   const handleContratameClick = () => {
-    console.log('¡Has hecho clic en Contrátame!');
     // Aquí podrías agregar más lógica, como abrir un formulario de contacto o redirigir a una página específica
   };
 
@@ -27,7 +26,7 @@ const Home: React.FC = () => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // Ajusta según quieras activar la animación
+      threshold: 0.1, // Ajusta según quieras activar la animación
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -64,11 +63,11 @@ const Home: React.FC = () => {
       <section id="about" className="section-container">
         <About />
       </section>
-      <section id="skills" className="section-container">
-        <Skills />
-      </section>
       <section id="projects" className="section-container">
         <Projects />
+      </section>
+      <section id="skills" className="section-container">
+        <Skills />
       </section>
       <section id="ContactForm" className="section-container">
       <ContactForm />

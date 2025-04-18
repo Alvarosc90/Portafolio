@@ -1,9 +1,11 @@
 .section-container {
-    width: 100%;
-    position: relative;
-    margin-top: 70px;
-    transform: translateX(-50px); /* Desplaza la sección hacia la izquierda */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  width: 100%;
+  position: relative;
+  margin-top: 70px;
+  opacity: 0;                         /* Estado inicial oculto */
+  transform: translateX(-50px);       /* Desplaza a la izquierda */
+  transition: opacity 0.5s ease,
+              transform 0.5s ease;
   }
   
   .visible {

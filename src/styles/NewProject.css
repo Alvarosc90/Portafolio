@@ -7,7 +7,7 @@
   color: #ff3c50;
 }
 
-new-projects-container{
+.new-projects-container{
   background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); 
 }
 
@@ -20,40 +20,59 @@ new-projects-container{
   align-self: flex-start; /* Alinea el título al inicio del contenedor */
   margin-top: 1px; /* Espacio superior del título */
 }
-
+/* 1. Asegúrate de que la transición abarque transform, sombra y color */
 .new-project-card {
   padding: 10px;
   border-radius: 5px;
+  background-color: rgba(255,255,255,0.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  opacity: 0.9;
+  transition: 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease, 
+    background-color 0.3s ease;
   cursor: pointer;
   position: relative;
-  width: calc(25% - 10px); /* 4 columnas */
+  width: calc(25% - 10px);
   flex-shrink: 0;
 }
 
+/* 2. Efecto al hacer hover sobre la card */
 .new-project-card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255,255,255,0.15);
 }
 
-.new-image-container {
-  width: 80%;
-  height: 160px;
-  position: relative;
-}
-
+/* 3. Zoom suave de la imagen solo al hacer hover */
 .new-project-image {
-  width: 140%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px;
   transition: transform 0.3s ease;
 }
-
 .new-project-card:hover .new-project-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
+
+/* 4. Realza el título al hacer hover */
+.new-project-details h3 {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.new-project-card:hover .new-project-details h3 {
+  color: #ff3c50;
+}
+
+/* 5. Opcional: aparecen las tecnologías con un pequeño fade */
+.new-technologies {
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.new-project-card:hover .new-technologies {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 
 .new-project-details {
   text-align: left;
