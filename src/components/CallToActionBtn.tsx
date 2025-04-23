@@ -13,7 +13,7 @@ const CallToActionBtn: React.FC<{ scrollToContact: () => void }> = ({ scrollToCo
     <>
       <div className='Name'>
         <h1>Alvaro Rodrigo Franco Soria Casali</h1>
-        <p>Analista de datos - Desarrollador FrontEnd - Diseñador Gráfico</p>
+        <p>Analista de datos - Desarrollador FullStack </p>
       </div>
       <a href="#ContactForm">
         <button className="cta-button" onClick={scrollToContact}>

@@ -11,7 +11,7 @@ const About: React.FC = () => {
         <h2 className="tittle">Sobre Mí</h2>
         <div className="about-section">
           <p className="textabout">
-            Soy un profesional de 34 años de Santiago del Estero, Argentina, con sólida formación en Análisis de Datos y Desarrollo Web. Como Analista de Datos y Programador en constante capacitación, he trabajado en proyectos de análisis de datos y desarrollo web, aplicando mis habilidades técnicas para lograr objetivos empresariales. Busco oportunidades en Marketing, Desarrollo Web y Análisis de Datos para seguir creciendo profesionalmente y contribuir significativamente en cada equipo. 
+            Soy un profesional de 34 años de Santiago del Estero, Actualmente viviendo en Cordoba, Argentina, con sólida formación en Análisis de Datos y Desarrollo Web. Como Analista de Datos y Programador en constante capacitación, he trabajado en proyectos de análisis de datos y desarrollo web, aplicando mis habilidades técnicas para lograr objetivos empresariales. Busco oportunidades en Desarrollo Web y Análisis de Datos para seguir creciendo profesionalmente y contribuir significativamente en cada equipo. 
             </p>
         </div>
 
