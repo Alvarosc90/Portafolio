@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         </a>
       </nav>
       <p className="copyright">
-        2024 Álvaro Rodrigo Franco Soria Casali
+        2025 Álvaro Rodrigo Franco Soria Casali
       </p>
     </footer>
   );
