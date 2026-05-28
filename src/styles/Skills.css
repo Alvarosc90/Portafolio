@@ -1,115 +1,133 @@
 .skills-section {
-  margin-top: 10px;
-  text-align: center;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(23, 32, 31, 0.07);
+}
+
+.skill-group h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.22rem;
+}
+
+.skill-group p {
+  margin: 12px 0 18px;
+  color: var(--soft);
+  line-height: 1.58;
 }
 
 .skills-container {
-  margin: 10px auto; /* Centra el contenedor de habilidades */
-  padding-bottom: 5px;
-  display: flex;
-  font-weight: bold;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px; /* Espacio entre los ítems de habilidades */
-  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); /* Degradado de negro transparente a transparente */
-}
-
-.skills-section h2 {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.title {
-  color: #00e1ff;
-  margin-top: 0;
-  font-size: 2rem;
-  font-family: "Archivo Black", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: auto;
 }
 
 .skill-item {
-  text-align: center;
-  width: 80px; /* Ajusta el tamaño de los ítems de habilidades */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
 }
 
-@media (max-width: 1200px) {
-  .skills-container {
-    gap: 30px; /* Reducción del espacio entre ítems en pantallas medianas */
-  }
-  
-  .skill-item {
-    width: 70px; /* Ajusta el tamaño de los ítems en pantallas medianas */
-  }
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
 }
 
-@media (max-width: 992px) {
-  .skills-container {
-    gap: 20px; /* Reducción del espacio entre ítems en pantallas más pequeñas */
-  }
-  
-  .skill-item {
-    width: 60px; /* Ajusta el tamaño de los ítems en pantallas más pequeñas */
-  }
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-@media (max-width: 768px) {
-  .skills-container {
-    gap: 15px; /* Reducción del espacio entre ítems en pantallas pequeñas */
+.skill-name {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.working-method {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.working-method div {
+  min-height: 160px;
+  padding: 20px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: var(--surface);
+  text-align: left;
+}
+
+.working-method span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 28px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--blue) 14%, transparent);
+  color: var(--blue);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.working-method strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+
+.working-method p {
+  margin: 10px 0 0;
+  color: var(--soft);
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .skills-grid,
+  .working-method {
+    grid-template-columns: 1fr;
   }
-  
-  .skill-item {
-    width: 50px; /* Ajusta el tamaño de los ítems en pantallas pequeñas */
+
+  .skill-group {
+    min-height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .skills-container {
-    gap: 12px; /* Reducción del espacio entre ítems en pantallas muy pequeñas */
-  }
-  
-  .skill-item {
-    width: 50px; /* Ajusta el tamaño de los ítems en pantallas muy pequeñas */
-    padding: 5px;
-  }
-}
-
-.skill-icon {
-  width: 100%;
-  height: 100px; /* Asegura que todos los iconos tengan la misma altura */
-  margin: 5px auto;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10%;
-  animation: pulse 1.5s infinite alternate; /* Animación de pulsación infinita */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skill-icon:hover {
-  transform: scale(1.2);
-}
-
-.skill-icon img {
-  width: 80%; /* Ajusta el tamaño de la imagen dentro del contenedor */
-  height: auto;
-  object-fit: contain;
-}
-
-.skill-name {
-  font-size: 12px;
-  color: white;
-  margin-top: 10px; /* Añade margen superior para separar el título del icono */
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
+    grid-template-columns: 1fr;
   }
 }

@@ -1,33 +1,21 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileDownload, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faFileDownload } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import cvFile from '../images/CV - Alvaro Soria.pdf';
 import '../styles/CallToActionBtn.css';
 
-const CallToActionBtn: React.FC<{ scrollToContact: () => void }> = ({ scrollToContact }) => {
-  const handleDownloadClick = () => {
-    console.log('Descargando CV...');
-    // Puedes agregar más lógica aquí si es necesario antes de descargar el CV
-  };
-
+const CallToActionBtn = () => {
   return (
-    <>
-      <div className='Name'>
-        <h1>Alvaro Rodrigo Franco Soria Casali</h1>
-        <p>Analista de datos - Desarrollador FullStack </p>
-      </div>
-      <a href="#ContactForm">
-        <button className="cta-button" onClick={scrollToContact}>
-          <FontAwesomeIcon icon={faHandshake} style={{ marginRight: '5px' }} />
-          Contacto
-        </button>
-      </a>
-      <a href="https://drive.google.com/file/d/1J8ZIN009O7qdNJTV-ujLy3BzG41rWdxg/view?usp=sharing" download="CV-Alvaro-Soria.pdf">
-        <button className="cta-button1" onClick={handleDownloadClick}>
-          <FontAwesomeIcon icon={faFileDownload} style={{ marginRight: '5px' }} />
-          Descargar CV
-        </button>
-      </a>
-    </>
+    <div className="cta-actions" aria-label="Acciones principales">
+      <motion.a href="#contact" className="cta-button cta-button--primary" whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }}>
+        <span>Conversemos</span>
+        <FontAwesomeIcon icon={faArrowRight} />
+      </motion.a>
+      <motion.a href={cvFile} className="cta-button cta-button--secondary" download="CV-Alvaro-Soria.pdf" whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }}>
+        <FontAwesomeIcon icon={faFileDownload} />
+        <span>Descargar CV</span>
+      </motion.a>
+    </div>
   );
 };
 

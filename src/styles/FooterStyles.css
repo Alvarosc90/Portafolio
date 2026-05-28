@@ -1,58 +1,164 @@
 .footer-container {
-  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); /* Degradado de negro transparente a transparente */
-    color: #00e1ff;
-    padding: 20px;
-    text-align: center;
-    
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(280px, 0.9fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 42px 5vw 46px;
+  border-top: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(93, 157, 255, 0.12), transparent 42%),
+    color-mix(in srgb, var(--surface-solid) 88%, #000000);
+  color: var(--ink);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.footer-brand img {
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: var(--glow);
+}
+
+.footer-brand strong {
+  display: block;
+  font-size: 1.12rem;
+}
+
+.footer-brand p {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+.footer-cta {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.footer-cta span {
+  color: var(--soft);
+  line-height: 1.45;
+}
+
+.footer-cta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  color: #06111d;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.social-icons a,
+.footer-nav-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover .social-icon {
+  color: var(--teal);
+}
+
+.footer-nav {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.footer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  color: var(--soft);
+  font-weight: 800;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-nav-link:hover {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.footer-nav-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+.footer-nav-link--top {
+  color: var(--teal);
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    padding: 34px 18px 38px;
   }
-  
-  .footer-container h2 {
-    margin-bottom: 10px;
-    font-size: 14px; /* Tamaño de letra aumentado */
-    color: #00e1ff;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center; /* Alinea el título al centro */
-  }
-  
+
   .social-icons {
-    margin-bottom: 20px;
+    justify-content: flex-start;
   }
-  
-  .social-icon {
-    font-size: 32px; /* Tamaño de los iconos aumentado */
-    margin: 0 15px;
-    color: #fff;
-    transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transición añadido */
-  }
-  
-  .social-icon:hover {
-    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
-  }
-  
+
   .footer-nav {
-    margin-bottom: 20px;
+    justify-content: flex-start;
   }
-  
-  .footer-nav-link {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 12px; /* Tamaño de letra aumentado */
-    transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transición añadido */
-    display: inline-block; /* Asegura que los enlaces se comporten correctamente */
-  }
-  
-  .footer-nav-link:hover {
-    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
-    color: #00e1ff;
-  }
-  
-  .footer-nav-link svg {
-    margin-right: 5px;
-  }
-  
+
   .copyright {
-    font-size: 12px;
-    margin-top: 20px;
+    text-align: left;
   }
-  
+}

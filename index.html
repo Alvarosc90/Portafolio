@@ -1,17 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap">
-  
-    <link rel="shortcut icon" type="image/png" href="src/images/LogoAlvaro.webp">
+    <meta name="description" content="Portfolio de Álvaro Soria, Responsable de Procesos y Gestión IT especializado en transformación digital, datos, Power BI y desarrollo Full Stack." />
+    <script>
+      try {
+        const storedTheme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = storedTheme === 'light' ? 'light' : 'dark';
+      } catch {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="/src/images/LogoHeader.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <title>Portfolio Alvaro Rodrigo Franco Soria Casali</title>
+    <title>Álvaro Soria | Procesos, Gestión IT y Datos</title>
   </head>
   <body>
     <div id="root"></div>

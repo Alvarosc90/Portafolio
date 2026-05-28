@@ -1,200 +1,188 @@
-.new-project-grid {
+.new-projects-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.project-block + .project-block {
+  margin-top: 42px;
+}
+
+.project-block__title {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
   gap: 10px;
-  padding: 0 20px;
-  color: #ff3c50;
+  margin-bottom: 16px;
+  color: var(--ink);
+  text-align: left;
 }
 
-.new-projects-container{
-  background: linear-gradient(to top, #00000062, rgba(0, 0, 0, 0)); 
+.project-block__title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--amber);
 }
 
-.new-projects-container h2{
-  color: #00e1ff;
-  font-size: 2rem; /* Tamaño de fuente para el título */
-  margin-bottom: 20px; /* Espacio inferior del título */
-  font-family: "Archivo Black", sans-serif;
-  text-align: center; /* Alinea el título al centro */
-  align-self: flex-start; /* Alinea el título al inicio del contenedor */
-  margin-top: 1px; /* Espacio superior del título */
+.project-block__title h3 {
+  margin: 0;
+  font-size: 1.25rem;
 }
-/* 1. Asegúrate de que la transición abarque transform, sombra y color */
+
+.new-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.new-project-grid--featured {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .new-project-card {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(255,255,255,0.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: 
-    transform 0.3s ease, 
-    box-shadow 0.3s ease, 
-    background-color 0.3s ease;
-  cursor: pointer;
   position: relative;
-  width: calc(25% - 10px);
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 2. Efecto al hacer hover sobre la card */
 .new-project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255,255,255,0.15);
-
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 18px 38px rgba(23, 32, 31, 0.11);
+  transform: translateY(-3px);
 }
 
-/* 3. Zoom suave de la imagen solo al hacer hover */
+.new-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
 .new-project-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
+
 .new-project-card:hover .new-project-image {
-  transform: scale(1);
+  transform: scale(1.03);
 }
-
-/* 4. Realza el título al hacer hover */
-.new-project-details h3 {
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-.new-project-card:hover .new-project-details h3 {
-  color: #ff3c50;
-}
-
-/* 5. Opcional: aparecen las tecnologías con un pequeño fade */
-.new-technologies {
-  opacity: 0.7;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.new-project-card:hover .new-technologies {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
 
 .new-project-details {
-  text-align: left;
-  margin-top: 10px;
-  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.project-category {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .new-project-details h3 {
-  margin-bottom: 8px;
-  font-size: 1.2rem;
- 
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-size: 1.18rem;
+  line-height: 1.25;
 }
 
 .new-project-details p {
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: white;
+  margin: 12px 0 0;
+  color: var(--soft);
+  font-size: 0.95rem;
+  line-height: 1.58;
+}
+
+.project-impact {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink) !important;
+  font-weight: 800;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.project-tags span {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--blue) 11%, transparent);
+  color: var(--soft);
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .new-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  justify-content: flex-start;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .new-tech-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: cover;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
 }
-@media (max-width: 768px) {
-  .new-projects-container{
-    margin-right: -30px;
-    margin-left: 60px;
-  }
-  .new-project-grid {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    gap: 10px;
 
-    overflow: hidden;
-    position: relative;
-    align-items: center;
-    justify-content: center;
+.internal-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 9px;
+  border-radius: 8px;
+  background: rgba(5, 12, 24, 0.86);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.internal-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 1020px) {
+  .new-project-grid,
+  .new-project-grid--featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .new-project-grid,
+  .new-project-grid--featured {
+    grid-template-columns: 1fr;
   }
 
-  .new-project-card {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .new-image-container {
-    height: 150px;
-    margin: 0 auto;
-  }
-
-  .new-project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+  .project-block + .project-block {
+    margin-top: 34px;
   }
 
   .new-project-details {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-
-  .new-project-details h3 {
-    font-size: 1rem;
-  }
-
-  .new-project-details p {
-    font-size: 0.8rem;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-
-  .nav-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
-  }
-  
-  .nav-button {
-    font-family: 'Montserrat', sans-serif;  
-    background-color: rgba(25, 25, 255, 0.295);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nav-button:hover {
-    background-color: rgba(255, 0, 0, 0.418);
-  }
-  
-
-  .nav-button:hover {
-    background-color: rgba(255, 0, 0, 0.418);
-  }
-}
-
-@media (min-width: 769px) {
-  .nav-buttons {
-    display: none; /* Ocultamos los botones de navegación en pantallas grandes */
+    padding: 16px;
   }
 }

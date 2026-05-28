@@ -1,15 +1,95 @@
-.section-container {
-  width: 100%;
+.portfolio-page {
   position: relative;
-  margin-top: 70px;
-  opacity: 0;                         /* Estado inicial oculto */
-  transform: translateX(-50px);       /* Desplaza a la izquierda */
-  transition: opacity 0.5s ease,
-              transform 0.5s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.section-container {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.section-container.visible,
+.section-container--hero {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.page-section {
+  padding: 74px 24px;
+}
+
+.page-section--contact {
+  padding-bottom: 84px;
+}
+
+.section-heading {
+  width: min(100%, 820px);
+  margin: 0 auto 34px;
+  text-align: left;
+}
+
+.section-heading span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--teal) 28%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--teal) 10%, transparent);
+  color: var(--teal);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--ink);
+  font-family: "Archivo Black", "Segoe UI", sans-serif;
+  font-size: 2.3rem;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.section-heading p {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: var(--soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 920px) {
+  .page-section {
+    padding: 58px 18px;
   }
-  
-  .visible {
-    opacity: 1;
-    transform: translateX(0); /* Vuelve la sección a su posición original */
+
+  .section-heading h2 {
+    font-size: 1.9rem;
   }
-  
+}
+
+@media (max-width: 560px) {
+  .page-section {
+    padding: 46px 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .section-heading p {
+    font-size: 0.98rem;
+  }
+}

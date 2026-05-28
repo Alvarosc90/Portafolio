@@ -1,42 +1,54 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faCode, faProjectDiagram, faHome } from '@fortawesome/free-solid-svg-icons';
-import '../styles/FooterStyles.css'; // Asegúrate de importar tu archivo CSS para los estilos
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { HiOutlineArrowUp, HiOutlineBriefcase, HiOutlineCodeBracket, HiOutlineEnvelope, HiOutlineSquares2X2 } from 'react-icons/hi2';
+import logo from '../images/LogoHeader.png';
+import '../styles/FooterStyles.css';
 
-const Footer: React.FC = () => {
-  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
-    window.location.href = '/'; // Redirige a la página de inicio
-  };
+const footerLinks = [
+  { href: '#about', label: 'Perfil', icon: HiOutlineBriefcase },
+  { href: '#projects', label: 'Casos', icon: HiOutlineSquares2X2 },
+  { href: '#skills', label: 'Stack', icon: HiOutlineCodeBracket },
+  { href: '#contact', label: 'Contacto', icon: HiOutlineEnvelope },
+];
 
+const Footer = () => {
   return (
     <footer className="footer-container">
-      <h2>Gracias por llegar hasta el final</h2>
-      <div className="social-icons">
-        <a href="https://www.linkedin.com/in/alvaro-rodrigo-soria-casali-60422a135/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
-        </a>
-        <a href="https://github.com/Alvarosc90" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} className="social-icon" />
-        </a>
+      <div className="footer-brand">
+        <img src={logo} alt="Logo de Álvaro Soria" />
+        <div>
+          <strong>Álvaro Soria</strong>
+          <p>Procesos · Gestión IT · Datos · Desarrollo</p>
+        </div>
       </div>
+
+      <div className="footer-cta">
+        <span>Disponible para conversar sobre mejora operativa, BI y soluciones internas.</span>
+        <a href="#contact">Iniciar conversación</a>
+      </div>
+
+      <div className="social-icons">
+        <motion.a href="https://www.linkedin.com/in/alvaro-rodrigo-soria-casali-60422a135/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" whileHover={{ y: -2 }}>
+          <FaLinkedinIn className="social-icon" />
+        </motion.a>
+        <motion.a href="https://github.com/Alvarosc90" target="_blank" rel="noopener noreferrer" aria-label="GitHub" whileHover={{ y: -2 }}>
+          <FaGithub className="social-icon" />
+        </motion.a>
+      </div>
+
       <nav className="footer-nav">
-        <a href="/" onClick={handleHomeClick} className="footer-nav-link">
-          <FontAwesomeIcon icon={faHome} /> Home
-        </a>
-        <a href="#about" className="footer-nav-link">
-          <FontAwesomeIcon icon={faUser} /> Acerca de Mí
-        </a>
-        <a href="#skills" className="footer-nav-link">
-          <FontAwesomeIcon icon={faCode} /> Habilidades
-        </a>
-        <a href="#projects" className="footer-nav-link">
-          <FontAwesomeIcon icon={faProjectDiagram} /> Proyectos
-        </a>
+        {footerLinks.map((link) => (
+          <motion.a href={link.href} className="footer-nav-link" key={link.href} whileHover={{ y: -2 }}>
+            <link.icon aria-hidden="true" /> {link.label}
+          </motion.a>
+        ))}
+        <motion.a href="#inicio" className="footer-nav-link footer-nav-link--top" whileHover={{ y: -2 }}>
+          <HiOutlineArrowUp aria-hidden="true" /> Inicio
+        </motion.a>
       </nav>
+
       <p className="copyright">
-        2025 Álvaro Rodrigo Franco Soria Casali
+        2026 Álvaro Rodrigo Franco Soria Casali
       </p>
     </footer>
   );

@@ -1,32 +1,21 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from '../components/Header';
-import PersonalSection from '../components/profileStyles';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
-import LogoHeader from '../components/Welcome';
-import CallToActionBtn from '../components/CallToActionBtn';
 import Portfolio from '../components/Portfolio';
-import BackgroundAnimation from '../components/BackgroundAnimation';
 import ContactForm from '../components/ContactForm';
-//import Projects2 from '../components/projects2';
 
+import '../styles/home.css';
 
-import '../styles/home.css'; // Importa tu archivo de estilos CSS para Home
-
-const Home: React.FC = () => {
-  const handleContratameClick = () => {
-    // Aquí podrías agregar más lógica, como abrir un formulario de contacto o redirigir a una página específica
-  };
-
+const Home = () => {
   useEffect(() => {
     const sections = document.querySelectorAll('.section-container');
-
-    const observerOptions = {
+    const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1, // Ajusta según quieras activar la animación
+      threshold: 0.12,
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -39,44 +28,41 @@ const Home: React.FC = () => {
       });
     }, observerOptions);
 
-    sections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
+    sections.forEach((section) => sectionObserver.observe(section));
 
     return () => {
-      sections.forEach((section) => {
-        sectionObserver.unobserve(section);
-      });
+      sections.forEach((section) => sectionObserver.unobserve(section));
     };
-  }, []); // Asegúrate de ajustar dependencias según necesites
+  }, []);
 
   return (
-    <>
-      <BackgroundAnimation />
-      <LogoHeader />
+    <main className="portfolio-page">
       <Header />
-      <Portfolio />
-      <section id="personalSection" className="section-container">
-        <PersonalSection />
-        <CallToActionBtn scrollToContact={handleContratameClick} />
+
+      <section id="inicio" className="section-container section-container--hero visible">
+        <Portfolio />
       </section>
-      <section id="about" className="section-container">
+
+      <section id="about" className="section-container page-section">
         <About />
       </section>
-      <section id="projects" className="section-container">
+
+      <section id="projects" className="section-container page-section">
         <Projects />
       </section>
-      <section id="skills" className="section-container">
+
+      <section id="skills" className="section-container page-section">
         <Skills />
       </section>
-      <section id="ContactForm" className="section-container">
-      <ContactForm />
+
+      <section id="contact" className="section-container page-section page-section--contact">
+        <ContactForm />
       </section>
+
       <section id="footer">
-      <Footer />
+        <Footer />
       </section>
-      
-    </>
+    </main>
   );
 };
 
