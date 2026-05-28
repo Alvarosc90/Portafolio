@@ -56,7 +56,7 @@ const About = () => {
           <h3>Responsable de Procesos y Gestión IT</h3>
           <p className="role-period">Feb. 2026 - actualidad</p>
           <p>
-            Ascenso a un rol estratégico transversal, combinando desarrollo Full Stack,
+            Rol estratégico transversal, combinando desarrollo Full Stack,
             análisis de datos, soporte funcional, compras técnicas y toma de decisiones
             vinculadas a infraestructura, servicios y tecnología.
           </p>

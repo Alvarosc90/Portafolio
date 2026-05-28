@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartLine, faDatabase, faDiagramProject, faGear, faHandshake, faRoute } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine, faDatabase, faDiagramProject, faGear, faRoute } from '@fortawesome/free-solid-svg-icons';
 import { motion, useReducedMotion } from 'framer-motion';
 import CallToActionBtn from './CallToActionBtn';
 import ProfileImageWrapper from './profileStyles';
@@ -29,10 +29,10 @@ const focusItems = [
 ];
 
 const impactFlow = [
-  { step: '01', title: 'Relevar', text: 'Escucho operación, dolores, excepciones y prioridades.' },
+  { step: '01', title: 'Relevar', text: 'Escucho operaciónes, excepciones y prioridades.' },
   { step: '02', title: 'Ordenar', text: 'Procedimento, simplifico y defino responsabilidades claras.' },
-  { step: '03', title: 'Construir', text: 'Desarrollo o integro soluciones IT ajustadas al circuito.' },
-  { step: '04', title: 'Medir', text: 'Automatizo indicadores para sostener la mejora en datos.' },
+  { step: '03', title: 'Construir', text: 'Desarrollo e integro soluciones IT ajustadas a las necesidades.' },
+  { step: '04', title: 'Medir', text: 'Automatizo indicadores para sostener la mejora en datos y apoyar a la toma de decisiones.' },
 ];
 
 const Portfolio = () => {
@@ -46,7 +46,7 @@ const Portfolio = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, ease: 'easeOut' }}
       >
-        <p className="hero-eyebrow">Capemi · Transformación digital · Gestión operativa</p>
+        <p className="hero-eyebrow">Transformación digital · Gestión operativa</p>
         <h1>Álvaro Soria</h1>
         <p className="hero-role">Responsable de Procesos y Gestión IT</p>
         <p className="hero-copy">
@@ -59,16 +59,12 @@ const Portfolio = () => {
 
         <div className="hero-metrics" aria-label="Resumen profesional">
           <div>
-            <span>Actualidad</span>
-            <strong>Feb. 2026</strong>
-          </div>
-          <div>
             <span>Capemi</span>
             <strong>1 año 7 meses</strong>
           </div>
           <div>
             <span>Enfoque</span>
-            <strong>IT + procesos + datos</strong>
+            <strong>IT + Procesos + Datos</strong>
           </div>
         </div>
       </motion.div>
@@ -87,11 +83,10 @@ const Portfolio = () => {
               <FontAwesomeIcon icon={faRoute} />
               Mapa de impacto
             </span>
-            <strong>Operación conectada</strong>
           </div>
           <div className="workflow-list">
             {focusItems.map((item) => (
-              <motion.div className="workflow-item" key={item.label} whileHover={{ x: 4 }}>
+              <motion.div className="workflow-item" key={item.label} whileHover={{ x: 5 }}>
                 <FontAwesomeIcon icon={item.icon} />
                 <span>
                   <strong>{item.label}</strong>
@@ -115,11 +110,6 @@ const Portfolio = () => {
               <p>{item.text}</p>
             </motion.article>
           ))}
-        </motion.div>
-
-        <motion.div className="hero-status" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.45 }}>
-          <FontAwesomeIcon icon={faHandshake} />
-          <span>Puente entre operación, proveedores y tecnología.</span>
         </motion.div>
       </div>
     </div>
