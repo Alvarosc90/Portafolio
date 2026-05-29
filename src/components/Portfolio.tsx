@@ -13,7 +13,7 @@ const focusItems = [
   },
   {
     label: 'Soluciones IT',
-    detail: 'herramientas internas y automatización',
+    detail: 'herramientas de desarrollo y automatización',
     icon: faGear,
   },
   {
@@ -26,14 +26,14 @@ const focusItems = [
     detail: 'análisis aplicado a decisiones concretas',
     icon: faDatabase,
   },
+    {
+    label: 'Gestion IT',
+    detail: 'análisis y Compras de insumos',
+    icon: faDiagramProject,
+  },
 ];
 
-const impactFlow = [
-  { step: '01', title: 'Relevar', text: 'Escucho operaciónes, excepciones y prioridades.' },
-  { step: '02', title: 'Ordenar', text: 'Procedimento, simplifico y defino responsabilidades claras.' },
-  { step: '03', title: 'Construir', text: 'Desarrollo e integro soluciones IT ajustadas a las necesidades.' },
-  { step: '04', title: 'Medir', text: 'Automatizo indicadores para sostener la mejora en datos y apoyar a la toma de decisiones.' },
-];
+
 
 const Portfolio = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -56,17 +56,6 @@ const Portfolio = () => {
         </p>
 
         <CallToActionBtn />
-
-        <div className="hero-metrics" aria-label="Resumen profesional">
-          <div>
-            <span>Capemi</span>
-            <strong>1 año 7 meses</strong>
-          </div>
-          <div>
-            <span>Enfoque</span>
-            <strong>IT + Procesos + Datos</strong>
-          </div>
-        </div>
       </motion.div>
 
       <div className="hero-visual" aria-label="Perfil y foco de trabajo">
@@ -81,7 +70,7 @@ const Portfolio = () => {
           <div className="workflow-panel__header">
             <span>
               <FontAwesomeIcon icon={faRoute} />
-              Mapa de impacto
+              Mis cualidades
             </span>
           </div>
           <div className="workflow-list">
@@ -103,13 +92,7 @@ const Portfolio = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.28, ease: 'easeOut' }}
         >
-          {impactFlow.map((item) => (
-            <motion.article key={item.step} whileHover={{ y: -5 }}>
-              <span>{item.step}</span>
-              <strong>{item.title}</strong>
-              <p>{item.text}</p>
-            </motion.article>
-          ))}
+
         </motion.div>
       </div>
     </div>

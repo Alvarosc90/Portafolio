@@ -14,34 +14,10 @@ const responsibilities = [
   'Soporte funcional y estratégico para áreas internas.',
 ];
 
-const pillars = [
-  {
-    title: 'Procesos claros',
-    text: 'Documento, ordeno y traduzco circuitos internos para que cada área trabaje con criterios compartidos.',
-    icon: faClipboardCheck,
-  },
-  {
-    title: 'Tecnología aplicada',
-    text: 'Construyo soluciones con JavaScript, React, Node.js y MSSQL cuando la operación necesita una herramienta concreta.',
-    icon: faScrewdriverWrench,
-  },
-  {
-    title: 'Datos accionables',
-    text: 'Automatizo indicadores y tableros para que la gestión tenga trazabilidad, lectura rápida y contexto.',
-    icon: faNetworkWired,
-  },
-  {
-    title: 'Puente operativo',
-    text: 'Conecto stakeholders, proveedores y equipos internos para convertir necesidades reales en decisiones ejecutables.',
-    icon: faPeopleArrows,
-  },
-];
-
 const About = () => {
   return (
     <div className="about-container">
       <div className="section-heading">
-        <span>Nuevo posicionamiento</span>
         <h2>Gestión IT con criterio de proceso, datos y ejecución.</h2>
         <p>
           Actualmente me desempeño en Capemi en un rol transversal orientado a optimizar
@@ -52,13 +28,12 @@ const About = () => {
 
       <div className="about-layout">
         <motion.article className="current-role" whileHover={{ y: -5 }}>
-          <div className="role-kicker">Capemi · Jornada completa · Híbrido</div>
           <h3>Responsable de Procesos y Gestión IT</h3>
           <p className="role-period">Feb. 2026 - actualidad</p>
           <p>
             Rol estratégico transversal, combinando desarrollo Full Stack,
             análisis de datos, soporte funcional, compras técnicas y toma de decisiones
-            vinculadas a infraestructura, servicios y tecnología.
+            vinculadas a infraestructura, servicios y tecnología. 
           </p>
         </motion.article>
 
@@ -70,16 +45,6 @@ const About = () => {
             ))}
           </ul>
         </motion.div>
-      </div>
-
-      <div className="pillar-grid">
-        {pillars.map((pillar) => (
-          <motion.article className="pillar-card" key={pillar.title} whileHover={{ y: -6, rotate: 0.2 }}>
-            <FontAwesomeIcon icon={pillar.icon} />
-            <h3>{pillar.title}</h3>
-            <p>{pillar.text}</p>
-          </motion.article>
-        ))}
       </div>
     </div>
   );

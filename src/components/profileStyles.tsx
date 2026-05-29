@@ -14,10 +14,6 @@ const ProfileImageWrapper = () => {
       <div className="profile-image-container">
         <img className="profile-image" src={ProfilePic} alt="Álvaro Soria" />
       </div>
-      <figcaption>
-        <span>Responsable de Procesos y Gestión IT</span>
-        <strong>Capemi</strong>
-      </figcaption>
     </motion.figure>
   );
 };
