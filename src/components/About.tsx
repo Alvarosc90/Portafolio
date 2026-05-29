@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboardCheck, faNetworkWired, faPeopleArrows, faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import '../styles/aboutStyles.css';
 
