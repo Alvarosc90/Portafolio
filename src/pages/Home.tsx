@@ -47,6 +47,7 @@ const products = [
   {
     id: 'erp',
     index: '01',
+    visual: 'process',
     eyebrow: 'INDUSTRIA',
     title: 'Valkiria ERP',
     headline: 'ERP industrial modular.',
@@ -59,6 +60,7 @@ const products = [
   {
     id: 'trainia',
     index: '02',
+    visual: 'central',
     eyebrow: 'SPORT · FITNESS',
     title: 'TrainIA',
     headline: 'SaaS para gestión y entrenamiento.',
@@ -72,6 +74,7 @@ const products = [
   {
     id: 'one',
     index: '03',
+    visual: 'web',
     eyebrow: 'AI BUSINESS OS',
     title: 'ValkirIA One',
     headline: 'IA y automatización para negocios.',
@@ -117,6 +120,7 @@ const experience = [
   },
   {
     index: '04',
+    visual: 'bi',
     type: 'CAPEMI · BUSINESS INTELLIGENCE',
     title: 'Dashboards e indicadores en Power BI',
     description:
@@ -126,6 +130,7 @@ const experience = [
   },
   {
     index: '05',
+    visual: 'odoo',
     type: 'CAPEMI · ODOO E INTEGRACIONES',
     title: 'Conector Odoo y reporting',
     description:
@@ -135,6 +140,7 @@ const experience = [
   },
   {
     index: '06',
+    visual: 'food',
     type: 'CAPEMI · AUTOMATIZACIÓN OPERATIVA',
     title: 'Gestión de comedor interno',
     description:
@@ -144,6 +150,7 @@ const experience = [
   },
   {
     index: '07',
+    visual: 'people',
     type: 'CAPEMI · RRHH',
     title: 'Sistema de clima laboral',
     description:
@@ -153,6 +160,7 @@ const experience = [
   },
   {
     index: '08',
+    visual: 'analytics',
     type: 'DATOS · ANÁLISIS',
     title: 'Análisis de producción, mantenimiento y datos',
     description:
@@ -162,6 +170,7 @@ const experience = [
   },
   {
     index: '09',
+    visual: 'agents',
     type: 'IA · DESARROLLO',
     title: 'Orquestación de agentes',
     description:
@@ -171,6 +180,7 @@ const experience = [
   },
   {
     index: '10',
+    visual: 'automation',
     type: 'AUTOMATIZACIÓN · INTEGRACIONES',
     title: 'WhatsApp, n8n, Odoo e IA local',
     description:
@@ -180,6 +190,7 @@ const experience = [
   },
   {
     index: '11',
+    visual: 'infra',
     type: 'INFRAESTRUCTURA · DEPLOY',
     title: 'VPS, Docker, Cloudflare y entornos',
     description:
@@ -189,6 +200,7 @@ const experience = [
   },
   {
     index: '12',
+    visual: 'vision',
     type: 'IA · COMPUTER VISION',
     title: 'Visión artificial con cámaras IP',
     description:
@@ -236,6 +248,47 @@ const capabilities = [
     tools: ['Docker', 'Linux', 'VPS', 'Cloudflare', 'GitHub'],
   },
 ];
+
+function ExperienceIllustration({ kind, title }: { kind: string; title: string }) {
+  const visualContent: Record<string, { label: string; icon: React.ReactNode; marks: string[] }> = {
+    process: { label: 'PROCESOS · IT', icon: <FiLayers />, marks: ['MAP', 'FLOW', 'IT'] },
+    central: { label: 'SISTEMA CENTRAL', icon: <FiBox />, marks: ['PROD', 'MANT', 'INV'] },
+    web: { label: 'WEB · BRAND', icon: <FiGlobe />, marks: ['WEB', 'SEO', 'BRAND'] },
+    bi: { label: 'POWER BI · KPIs', icon: <FiBarChart2 />, marks: ['OEE', 'MTBF', 'MTTR'] },
+    odoo: { label: 'ODOO · ERP', icon: <FiDatabase />, marks: ['MRP', 'STOCK', 'API'] },
+    food: { label: 'OPERACIÓN · COMEDOR', icon: <FiCheckCircle />, marks: ['MENU', 'PED', 'QR'] },
+    people: { label: 'RRHH · CLIMA', icon: <FiUsers />, marks: ['TEAM', 'DATA', 'UX'] },
+    analytics: { label: 'DATA · ANÁLISIS', icon: <FiBarChart2 />, marks: ['SQL', 'PY', 'BI'] },
+    agents: { label: 'AGENTES · QA', icon: <FiCpu />, marks: ['FE', 'BE', 'QA'] },
+    automation: { label: 'N8N · AUTOMATION', icon: <FiMessageSquare />, marks: ['WA', 'AI', 'API'] },
+    infra: { label: 'INFRA · DEPLOY', icon: <FiServer />, marks: ['VPS', 'DOCKER', 'CF'] },
+    vision: { label: 'COMPUTER VISION', icon: <FiZap />, marks: ['YOLO', 'RTSP', 'CV'] },
+  };
+
+  const visual = visualContent[kind] ?? visualContent.process;
+
+  return (
+    <div className={'experience-illustration illustration-' + kind} role="img" aria-label={'Ilustración representativa: ' + title}>
+      <div className="illustration-top">
+        <span>{visual.icon}</span>
+        <small>{visual.label}</small>
+      </div>
+      <div className="illustration-canvas" aria-hidden="true">
+        <div className="illustration-focus">
+          <span>{visual.marks[0]}</span>
+          <strong>{visual.marks[1]}</strong>
+          <small>{visual.marks[2]}</small>
+        </div>
+        <div className="illustration-grid-lines" />
+        <i className="illustration-orbit orbit-one" />
+        <i className="illustration-orbit orbit-two" />
+        <i className="illustration-dot dot-one" />
+        <i className="illustration-dot dot-two" />
+        <i className="illustration-dot dot-three" />
+      </div>
+    </div>
+  );
+}
 
 function ProductVisual({ productId }: { productId: string }) {
   if (productId === 'erp') {
@@ -442,10 +495,6 @@ export default function Home() {
               <div className="hero-portrait-large">
                 <img src={portrait} alt="Álvaro Soria" fetchPriority="high" />
               </div>
-              <div className="hero-portrait-name">
-                <strong>Álvaro Soria</strong>
-                <span>Córdoba, Argentina</span>
-              </div>
             </motion.div>
 
             <motion.aside
@@ -547,6 +596,7 @@ export default function Home() {
               const Icon = item.icon;
               return (
                 <article className="experience-project" key={item.index}>
+                  <ExperienceIllustration kind={item.visual} title={item.title} />
                   <div className="experience-project-content">
                     <div className="experience-project-top">
                       <span>{item.index}</span>
@@ -565,75 +615,6 @@ export default function Home() {
                 </article>
               );
             })}
-          </div>
-
-          <div className="experience-visuals">
-            <div className="experience-visuals-head">
-              <span className="eyebrow">ÁREAS DE TRABAJO</span>
-              <h3>Una vista visual de mi experiencia.</h3>
-            </div>
-
-            <div className="experience-visual-grid">
-              <article className="experience-visual-card visual-industry">
-                <div className="visual-label"><FiSettings /><span>INDUSTRIA · SISTEMAS</span></div>
-                <div className="visual-industry-scene" aria-hidden="true">
-                  <div className="factory-block factory-a" />
-                  <div className="factory-block factory-b" />
-                  <div className="factory-block factory-c" />
-                  <div className="factory-line line-a" />
-                  <div className="factory-line line-b" />
-                  <div className="factory-node node-a" />
-                  <div className="factory-node node-b" />
-                  <div className="factory-node node-c" />
-                </div>
-                <strong>Sistemas internos y operación</strong>
-                <p>Procesos, producción, mantenimiento, inventario y gestión conectados.</p>
-              </article>
-
-              <article className="experience-visual-card visual-bi">
-                <div className="visual-label"><FiBarChart2 /><span>BUSINESS INTELLIGENCE</span></div>
-                <div className="visual-bi-scene" aria-hidden="true">
-                  <div className="bi-kpi"><small>OEE</small><b>86%</b></div>
-                  <div className="bi-bars">
-                    {[42, 68, 55, 82, 73, 91, 78].map((height, index) => <i key={index} style={{ height: height + '%' }} />)}
-                  </div>
-                  <div className="bi-line"><span /><span /><span /><span /></div>
-                </div>
-                <strong>Datos y dashboards</strong>
-                <p>Power BI, SQL, DAX y KPIs para operación y toma de decisiones.</p>
-              </article>
-
-              <article className="experience-visual-card visual-ai">
-                <div className="visual-label"><FiCpu /><span>IA · AUTOMATIZACIÓN</span></div>
-                <div className="visual-ai-scene" aria-hidden="true">
-                  <div className="ai-node main">AI</div>
-                  <div className="ai-node n1">FE</div>
-                  <div className="ai-node n2">BE</div>
-                  <div className="ai-node n3">QA</div>
-                  <div className="ai-node n4">API</div>
-                  <div className="ai-connector c1" />
-                  <div className="ai-connector c2" />
-                  <div className="ai-connector c3" />
-                  <div className="ai-connector c4" />
-                </div>
-                <strong>Agentes e integraciones</strong>
-                <p>Orquestación de agentes, n8n, Odoo, WhatsApp, IA local y APIs.</p>
-              </article>
-
-              <article className="experience-visual-card visual-infra">
-                <div className="visual-label"><FiServer /><span>INFRAESTRUCTURA</span></div>
-                <div className="visual-infra-scene" aria-hidden="true">
-                  <div className="server-rack"><i /><i /><i /><i /></div>
-                  <div className="infra-cloud">CLOUD</div>
-                  <div className="infra-route r1" />
-                  <div className="infra-route r2" />
-                  <div className="infra-endpoint e1" />
-                  <div className="infra-endpoint e2" />
-                </div>
-                <strong>Deploy y entornos</strong>
-                <p>Docker, Linux, VPS, Cloudflare, dominios y producción.</p>
-              </article>
-            </div>
           </div>
 
           <div className="github-archive">
