@@ -48,7 +48,6 @@ const products = [
   {
     id: 'erp',
     index: '01',
-    visual: 'process',
     eyebrow: 'INDUSTRIA',
     title: 'Valkiria ERP',
     headline: 'ERP industrial modular.',
@@ -61,7 +60,6 @@ const products = [
   {
     id: 'trainia',
     index: '02',
-    visual: 'central',
     eyebrow: 'SPORT · FITNESS',
     title: 'TrainIA',
     headline: 'SaaS para gestión y entrenamiento.',
@@ -75,7 +73,6 @@ const products = [
   {
     id: 'one',
     index: '03',
-    visual: 'web',
     eyebrow: 'AI BUSINESS OS',
     title: 'ValkirIA One',
     headline: 'IA y automatización para negocios.',
@@ -90,6 +87,7 @@ const products = [
 const experience = [
   {
     index: '01',
+    visual: 'process',
     type: 'CAPEMI · PROCESOS Y GESTIÓN IT',
     title: 'Responsable de Procesos y Gestión IT',
     description:
@@ -101,6 +99,7 @@ const experience = [
   },
   {
     index: '02',
+    visual: 'central',
     type: 'CAPEMI · DESARROLLO FULL STACK',
     title: 'Sistema Central CAPEMI',
     description:
@@ -110,6 +109,7 @@ const experience = [
   },
   {
     index: '03',
+    visual: 'web',
     type: 'CAPEMI · WEB Y COMUNICACIÓN',
     title: 'capemi.ar, rebranding y presencia digital',
     description:
