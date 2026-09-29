@@ -5,6 +5,7 @@ import {
   FiActivity,
   FiArrowRight,
   FiArrowUpRight,
+  FiBarChart2,
   FiBox,
   FiCheckCircle,
   FiCode,
@@ -26,17 +27,22 @@ import {
   FiZap,
 } from 'react-icons/fi';
 import portrait from '../images/PortafolioProfile1.webp';
+import platform from '../images/centralizado1.png';
+import dining from '../images/Comedor1.png';
+import survey from '../images/encuesta1.png';
+import visualization from '../images/visualization.png';
 import cv from '../images/CV - Alvaro Soria.pdf';
 
 const linkedin = 'https://www.linkedin.com/in/alvaro-rodrigo-soria-casali-60422a135/';
 const github = 'https://github.com/Alvarosc90';
 const valkiria = 'https://valkiria.tech/';
 const trainia = 'https://trainia.valkiria.tech/';
+const capemi = 'https://capemi.ar/';
 
 const navigation = [
   ['about', 'Perfil'],
+  ['experience', 'Experiencia'],
   ['products', 'Productos'],
-  ['work', 'Impacto'],
   ['stack', 'Stack'],
   ['contact', 'Contacto'],
 ];
@@ -45,24 +51,24 @@ const products = [
   {
     id: 'erp',
     index: '01',
-    eyebrow: 'INDUSTRIA · OPERACIÓN',
+    eyebrow: 'INDUSTRIA',
     title: 'Valkiria ERP',
-    headline: 'La operación industrial, conectada.',
+    headline: 'ERP industrial modular.',
     description:
-      'ERP industrial modular para unir producción, mantenimiento, inventario, compras, calidad, finanzas, logística, RRHH y accesos sobre una misma realidad operativa.',
-    proof: ['Producción y máquinas', 'Mantenimiento + pañol', 'Inventario / WMS', 'Compras y calidad', 'RRHH y accesos', 'Integraciones'],
+      'Producción, mantenimiento, inventario, compras, calidad, finanzas, logística, RRHH, accesos e integraciones en una misma plataforma.',
+    proof: ['Producción', 'Mantenimiento', 'WMS', 'Compras', 'Calidad', 'RRHH'],
     accent: 'cyan',
     icon: FiSettings,
   },
   {
     id: 'trainia',
     index: '02',
-    eyebrow: 'SPORT · FITNESS · COMUNIDAD',
+    eyebrow: 'SPORT · FITNESS',
     title: 'TrainIA',
-    headline: 'Gestión, entrenamiento y comunidad.',
+    headline: 'SaaS para gestión y entrenamiento.',
     description:
-      'SaaS multi-tenant para gimnasios, clubes, academias y escuelas deportivas. Membresías, pagos, asistencia, clases, caja, kiosco, comunidad y herramientas inteligentes para entrenadores y alumnos.',
-    proof: ['Multi-sede', 'Membresías y pagos', 'QR y asistencia', 'Caja + kiosco', 'Coach IA', 'Portal de autogestión'],
+      'Multi-sede, membresías, pagos, asistencia, clases, caja, kiosco, comunidad, autogestión y herramientas para entrenadores y alumnos.',
+    proof: ['Multi-sede', 'Pagos', 'QR', 'Caja', 'Coach IA', 'Autogestión'],
     accent: 'orange',
     icon: FiActivity,
     href: trainia,
@@ -72,106 +78,171 @@ const products = [
     index: '03',
     eyebrow: 'AI BUSINESS OS',
     title: 'ValkirIA One',
-    headline: 'IA aplicada al trabajo real.',
+    headline: 'IA y automatización para negocios.',
     description:
-      'Workspace para operar agentes, conversaciones, CRM, agenda, automatizaciones, marketing, reporting e integraciones manteniendo contexto y separación por empresa.',
-    proof: ['Agentes especializados', 'CRM + WhatsApp', 'Agenda', 'Automatizaciones', 'Reporting', 'Control de plataforma'],
+      'Agentes, CRM, WhatsApp, agenda, automatizaciones, marketing, reporting e integraciones dentro de un workspace por empresa.',
+    proof: ['Agentes IA', 'CRM', 'WhatsApp', 'Agenda', 'Automatizaciones', 'Reporting'],
     accent: 'violet',
     icon: FiCpu,
+  },
+];
+
+const experience = [
+  {
+    index: '01',
+    type: 'CAPEMI · PROCESOS Y GESTIÓN IT',
+    title: 'Responsable de Procesos y Gestión IT',
+    description:
+      'Desarrollo soluciones tecnológicas para áreas operativas y administrativas. Automatización de procesos, soporte a decisiones, infraestructura, proveedores e integración entre necesidades de negocio y tecnología.',
+    tags: ['Procesos', 'IT', 'Automatización', 'Infraestructura', 'Proveedores'],
+    icon: FiLayers,
+    link: capemi,
+    linkLabel: 'capemi.ar',
+  },
+  {
+    index: '02',
+    type: 'CAPEMI · DESARROLLO FULL STACK',
+    title: 'Sistema Central CAPEMI',
+    description:
+      'Plataforma interna para centralizar producción, mantenimiento, inventario, reclamos, accesos y circuitos por sector, con roles, trazabilidad y datos compartidos.',
+    tags: ['React', 'Node.js', 'SQL', 'Roles', 'Trazabilidad'],
+    icon: FiBox,
+    image: platform,
+  },
+  {
+    index: '03',
+    type: 'CAPEMI · WEB Y COMUNICACIÓN',
+    title: 'capemi.ar, rebranding y presencia digital',
+    description:
+      'Trabajo sobre el sitio institucional, actualización de presencia digital, contenidos y piezas vinculadas a comunicación, marketing y posicionamiento de la empresa.',
+    tags: ['Web', 'Contenido', 'Rebranding', 'Marketing digital'],
+    icon: FiGlobe,
+    link: capemi,
+    linkLabel: 'Visitar capemi.ar',
+  },
+  {
+    index: '04',
+    type: 'CAPEMI · BUSINESS INTELLIGENCE',
+    title: 'Dashboards e indicadores en Power BI',
+    description:
+      'Tableros para producción, mantenimiento y seguimiento operativo: disponibilidad, MTBF, MTTR, fallas, piezas procesadas, actividades y otros indicadores de gestión.',
+    tags: ['Power BI', 'DAX', 'Power Query', 'SQL', 'KPIs'],
+    icon: FiBarChart2,
+    image: visualization,
+  },
+  {
+    index: '05',
+    type: 'CAPEMI · ODOO E INTEGRACIONES',
+    title: 'Conector Odoo y reporting',
+    description:
+      'Consultas y cruces sobre ventas, compras, inventario, MRP, facturación y productos. Exportación de registros, reporting y conexión con procesos de planta.',
+    tags: ['Odoo', 'Node.js', 'Express', 'APIs', 'Excel'],
+    icon: FiDatabase,
+  },
+  {
+    index: '06',
+    type: 'IA · DESARROLLO',
+    title: 'Orquestación de agentes',
+    description:
+      'Flujo de agentes especializados para revisar frontend, backend, QA, consistencia visual, documentación y contexto de distintos proyectos en paralelo.',
+    tags: ['Agentes IA', 'Frontend', 'Backend', 'QA', 'GitHub'],
+    icon: FiCpu,
+  },
+  {
+    index: '07',
+    type: 'AUTOMATIZACIÓN · INTEGRACIONES',
+    title: 'WhatsApp, n8n, Odoo e IA local',
+    description:
+      'Flujos conversacionales para consultar sistemas, interpretar pedidos y ejecutar acciones mediante webhooks, APIs y modelos locales.',
+    tags: ['n8n', 'WhatsApp', 'Odoo', 'Ollama', 'Qwen', 'Webhooks'],
+    icon: FiMessageSquare,
+  },
+  {
+    index: '08',
+    type: 'INFRAESTRUCTURA · DEPLOY',
+    title: 'VPS, Docker, Cloudflare y entornos',
+    description:
+      'Configuración de entornos de desarrollo, staging y producción, despliegues, Docker, Linux, túneles Cloudflare, dominios, SSL y servicios auxiliares.',
+    tags: ['Docker', 'Linux', 'VPS', 'Cloudflare', 'GitHub'],
+    icon: FiServer,
+  },
+  {
+    index: '09',
+    type: 'IA · COMPUTER VISION',
+    title: 'Visión artificial con cámaras IP',
+    description:
+      'Detección y conteo de personas y vehículos utilizando streams RTSP, zonas de interés y modelos YOLO.',
+    tags: ['Python', 'YOLO', 'RTSP', 'Computer Vision'],
+    icon: FiZap,
+  },
+  {
+    index: '10',
+    type: 'CAPEMI · AUTOMATIZACIÓN OPERATIVA',
+    title: 'Gestión de comedor interno',
+    description:
+      'Sistema para menús, pedidos por empleado, demanda diaria y control de entrega mediante lectura de código de barras.',
+    tags: ['React', 'Node.js', 'SQL', 'Código de barras'],
+    icon: FiCheckCircle,
+    image: dining,
+  },
+  {
+    index: '11',
+    type: 'CAPEMI · RRHH',
+    title: 'Sistema de clima laboral',
+    description:
+      'Encuestas internas con autenticación, carga de respuestas, visualización estadística y seguimiento de resultados.',
+    tags: ['React', 'Encuestas', 'Autenticación', 'Reportes'],
+    icon: FiUsers,
+    image: survey,
+  },
+  {
+    index: '12',
+    type: 'DATOS · ANÁLISIS',
+    title: 'Análisis de producción, mantenimiento y datos',
+    description:
+      'Trabajos de análisis sobre ventas, rendimiento productivo, fallas de máquinas, piezas granalladas, actividades y datasets con Python, Excel y BI.',
+    tags: ['Python', 'Excel', 'Power BI', 'SQL', 'Análisis de datos'],
+    icon: FiBarChart2,
   },
 ];
 
 const capabilities = [
   {
     icon: FiLayers,
-    title: 'Producto y procesos',
-    text: 'Relevo la operación, detecto fricción y convierto el problema en un producto utilizable.',
-    tools: ['Discovery', 'UX operativo', 'Roadmap', 'Roles y permisos'],
+    title: 'Procesos y producto',
+    text: 'Relevamiento, diseño funcional, priorización y mejora continua.',
+    tools: ['Discovery', 'UX operativo', 'Roadmap', 'Roles'],
   },
   {
     icon: FiCode,
     title: 'Desarrollo full stack',
-    text: 'Construyo aplicaciones web y SaaS desde frontend hasta APIs, autenticación y lógica de negocio.',
-    tools: ['React', 'TypeScript', 'Node.js', 'Express', 'REST APIs'],
+    text: 'Aplicaciones web, SaaS, APIs y lógica de negocio.',
+    tools: ['React', 'TypeScript', 'JavaScript', 'Node.js', 'Express'],
   },
   {
-    icon: FiZap,
-    title: 'IA, agentes y automatización',
-    text: 'Conecto modelos, agentes y flujos para reducir tareas repetitivas y acelerar decisiones.',
-    tools: ['OpenAI', 'Ollama', 'Qwen', 'n8n', 'Webhooks'],
+    icon: FiCpu,
+    title: 'IA y agentes',
+    text: 'Agentes especializados, modelos locales y automatización asistida.',
+    tools: ['OpenAI', 'Ollama', 'Qwen', 'n8n', 'YOLO'],
   },
   {
     icon: FiDatabase,
     title: 'Datos y BI',
-    text: 'Modelo datos y diseño indicadores para que la operación pueda medirse y explicarse.',
-    tools: ['Power BI', 'DAX', 'SQL', 'MySQL', 'Excel'],
+    text: 'Modelado, consultas, indicadores y visualización.',
+    tools: ['Power BI', 'DAX', 'Power Query', 'SQL', 'Excel'],
   },
   {
     icon: FiMessageSquare,
     title: 'Integraciones',
-    text: 'Uno sistemas que normalmente viven separados: ERP, mensajería, formularios, pagos y servicios internos.',
-    tools: ['Odoo', 'WhatsApp', 'Mercado Pago', 'SMTP', 'APIs'],
+    text: 'Conexión entre ERP, mensajería, pagos y servicios.',
+    tools: ['Odoo', 'WhatsApp', 'Mercado Pago', 'SMTP', 'REST APIs'],
   },
   {
     icon: FiServer,
-    title: 'Infraestructura y deploy',
-    text: 'Llevo la solución a producción y preparo el entorno para operar, probar y crecer.',
+    title: 'Infraestructura',
+    text: 'Deploy, entornos, servidores y operación técnica.',
     tools: ['Docker', 'Linux', 'VPS', 'Cloudflare', 'GitHub'],
   },
-];
-
-const work = [
-  {
-    index: '01',
-    type: 'EMPRESA · INDUSTRIA',
-    title: 'Digitalización operativa en CAPEMI',
-    description:
-      'Desarrollo e integración de herramientas internas para producción, mantenimiento, inventario, asistencia, comedor, indicadores y otros circuitos de gestión.',
-    result:
-      'El foco es reemplazar información fragmentada por flujos trazables, roles claros y datos que puedan reutilizarse entre áreas.',
-    tags: ['Aplicaciones internas', 'Procesos', 'SQL', 'Integración', 'Power BI'],
-    icon: FiBox,
-  },
-  {
-    index: '02',
-    type: 'AUTOMATIZACIÓN · IA',
-    title: 'Orquestación de agentes para construir más rápido',
-    description:
-      'Diseño un flujo de trabajo donde agentes especializados revisan frontend, backend, calidad y consistencia mientras el desarrollo avanza.',
-    result:
-      'La IA no reemplaza el criterio: se utiliza para paralelizar revisión, documentación, QA y tareas repetitivas sin perder contexto del proyecto.',
-    tags: ['Agentes IA', 'QA', 'GitHub', 'Contexto de proyecto', 'Automatización'],
-    icon: FiCpu,
-  },
-  {
-    index: '03',
-    type: 'INTEGRACIONES · NEGOCIO',
-    title: 'Del mensaje a la acción',
-    description:
-      'Flujos que conectan WhatsApp, n8n, Odoo y modelos de IA para consultar información y ejecutar tareas dentro de procesos reales.',
-    result:
-      'La meta es que una conversación pueda transformarse en una consulta, una actualización o una acción de negocio sin duplicar carga manual.',
-    tags: ['WhatsApp', 'n8n', 'Odoo', 'APIs', 'IA local'],
-    icon: FiMessageSquare,
-  },
-  {
-    index: '04',
-    type: 'PRODUCTO · SAAS',
-    title: 'Productos propios con operación real',
-    description:
-      'Valkiria ERP, TrainIA y ValkirIA One se diseñan como productos independientes, con roles, módulos, billing, despliegue y evolución continua.',
-    result:
-      'Trabajo el producto completo: arquitectura, experiencia, datos, infraestructura, integraciones, pruebas y feedback de uso.',
-    tags: ['SaaS', 'Multi-tenant', 'Billing', 'UX', 'Deploy'],
-    icon: FiGlobe,
-  },
-];
-
-const principles = [
-  ['01', 'Entender antes de automatizar', 'Primero identifico cómo funciona el proceso y dónde se pierde tiempo, información o control.'],
-  ['02', 'Construir para uso real', 'Una solución tiene que sobrevivir al día a día: roles, errores, mobile, permisos y casos borde.'],
-  ['03', 'Conectar, no aislar', 'El valor crece cuando aplicaciones, datos, IA e integraciones comparten contexto.'],
-  ['04', 'Iterar con evidencia', 'Mido, reviso con usuarios y ajusto el producto sobre lo que realmente sucede en operación.'],
 ];
 
 function ProductVisual({ productId }: { productId: string }) {
@@ -210,8 +281,8 @@ function ProductVisual({ productId }: { productId: string }) {
           <div className="phone-stats"><span><b>14</b> clases</span><span><b>82%</b> asistencia</span></div>
         </div>
         <div className="trainia-panel">
-          <span>COMUNIDAD</span>
-          <strong>Todo conectado.<br />Todo en movimiento.</strong>
+          <span>GESTIÓN + ENTRENAMIENTO</span>
+          <strong>Socios.<br />Pagos.<br />Comunidad.</strong>
           <div><i /><i /><i /><i /></div>
         </div>
       </div>
@@ -224,8 +295,8 @@ function ProductVisual({ productId }: { productId: string }) {
       <div className="one-main">
         <div className="ui-bar"><span>COMMAND CENTER</span><b>WORKSPACE ACTIVO</b></div>
         <div className="agent-grid">
-          <div className="agent-primary"><small>AGENTE PRINCIPAL</small><strong>Operations Agent</strong><p>Contexto, herramientas e integraciones en un mismo flujo.</p><span><i /> ONLINE</span></div>
-          <div><small>LEADS</small><strong>24</strong><span>+6 esta semana</span></div>
+          <div className="agent-primary"><small>AGENTE PRINCIPAL</small><strong>Operations Agent</strong><p>Contexto, herramientas e integraciones.</p><span><i /> ONLINE</span></div>
+          <div><small>LEADS</small><strong>24</strong><span>esta semana</span></div>
           <div><small>AUTOMATIZACIONES</small><strong>18</strong><span>12 activas</span></div>
           <div className="one-flow"><small>FLUJO</small><p>WhatsApp → Agente → CRM → Agenda</p></div>
         </div>
@@ -240,12 +311,9 @@ function Contact() {
   return (
     <section id="contact" className="section contact-section">
       <div className="contact-copy">
-        <span className="eyebrow">05 / CONVERSEMOS</span>
-        <h2>¿Tenés un proceso que<br /><em>debería funcionar mejor?</em></h2>
-        <p>
-          Puedo ayudarte a convertir una operación manual, una idea de producto o una integración pendiente
-          en una solución concreta.
-        </p>
+        <span className="eyebrow">05 / CONTACTO</span>
+        <h2>¿Trabajamos juntos?</h2>
+        <p>Desarrollo, automatización, integraciones, datos, IA o producto.</p>
         <div className="contact-links">
           <a href={linkedin} target="_blank" rel="noopener noreferrer"><FiLinkedin /> LinkedIn <FiArrowUpRight /></a>
           <a href={github} target="_blank" rel="noopener noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a>
@@ -257,19 +325,19 @@ function Contact() {
         <div className="success-message" role="status">
           <FiCheckCircle />
           <h3>Mensaje recibido.</h3>
-          <p>Gracias por contarme el desafío. Te respondo para que veamos contexto, alcance y próximos pasos.</p>
+          <p>Gracias. Te respondo por email.</p>
         </div>
       ) : (
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-heading"><span>INICIAR CONVERSACIÓN</span><small>Respuesta por email</small></div>
           <label htmlFor="name">Nombre</label>
-          <input id="name" name="name" autoComplete="name" placeholder="¿Cómo te llamás?" required />
+          <input id="name" name="name" autoComplete="name" placeholder="Tu nombre" required />
           <ValidationError prefix="Nombre" field="name" errors={state.errors} />
           <label htmlFor="email">Email</label>
           <input id="email" name="email" type="email" autoComplete="email" placeholder="nombre@empresa.com" required />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
-          <label htmlFor="message">¿Qué querés resolver?</label>
-          <textarea id="message" name="message" rows={5} placeholder="Proceso, idea, sistema o integración que necesitás mejorar…" required />
+          <label htmlFor="message">Proyecto o necesidad</label>
+          <textarea id="message" name="message" rows={5} placeholder="Contame brevemente qué necesitás." required />
           <ValidationError prefix="Mensaje" field="message" errors={state.errors} />
           <ValidationError errors={state.errors} />
           <button className="button primary" disabled={state.submitting} type="submit">
@@ -309,7 +377,7 @@ export default function Home() {
       <header className="site-header">
         <a href="#inicio" className="brand" aria-label="Álvaro Soria, inicio">
           <span className="monogram">AS<span>.</span></span>
-          <span>ÁLVARO SORIA<small>PRODUCT · SOFTWARE · AI</small></span>
+          <span>ÁLVARO SORIA<small>SOFTWARE · DATA · AI · AUTOMATION</small></span>
         </a>
 
         <nav id="main-nav" className={menu ? 'navigation open' : 'navigation'} aria-label="Navegación principal">
@@ -326,7 +394,7 @@ export default function Home() {
           >
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
-          <a className="header-contact" href="#contact">Trabajemos juntos <FiArrowUpRight /></a>
+          <a className="header-contact" href="#contact">Contacto <FiArrowUpRight /></a>
           <button
             className="icon-button menu-toggle"
             aria-label={menu ? 'Cerrar menú' : 'Abrir menú'}
@@ -349,23 +417,23 @@ export default function Home() {
               transition={{ duration: 0.65 }}
             >
               <div className="availability"><i /> DISPONIBLE PARA PROYECTOS FREELANCE Y COLABORACIONES</div>
-              <span className="eyebrow">PORTFOLIO / 2026</span>
-              <h1>Construyo sistemas que convierten<br />procesos complejos en <em>productos útiles.</em></h1>
+              <span className="eyebrow">ÁLVARO SORIA · PORTFOLIO 2026</span>
+              <h1>Entender.<br />Construir.<br /><em>Mejorar.</em></h1>
               <p className="hero-description">
-                Desarrollo software, automatizaciones y soluciones con IA de punta a punta.
-                Entiendo la operación, diseño el producto, conecto los sistemas y lo llevo a producción.
+                Desarrollo software, sistemas internos, productos SaaS, dashboards, automatizaciones,
+                integraciones e IA aplicada a procesos reales.
               </p>
 
               <div className="hero-actions">
-                <a className="button primary" href="#products">Ver productos <FiArrowUpRight /></a>
-                <a className="button ghost" href="#contact">Contame tu proyecto <FiArrowRight /></a>
+                <a className="button primary" href="#experience">Ver experiencia <FiArrowUpRight /></a>
+                <a className="button ghost" href="#products">Productos propios <FiArrowRight /></a>
                 <a className="text-action" href={cv} download="CV-Alvaro-Soria.pdf"><FiDownload /> Descargar CV</a>
               </div>
 
               <div className="hero-proof">
-                <div><strong>03</strong><span>productos propios<br />en evolución</span></div>
-                <div><strong>360°</strong><span>producto, código,<br />datos y deploy</span></div>
-                <div><strong>AI</strong><span>agentes y automatización<br />aplicados a operación</span></div>
+                <div><strong>IT</strong><span>Procesos, sistemas<br />e infraestructura</span></div>
+                <div><strong>BI</strong><span>Power BI, SQL<br />y análisis</span></div>
+                <div><strong>AI</strong><span>Agentes, IA local<br />y automatización</span></div>
               </div>
             </motion.div>
 
@@ -378,21 +446,23 @@ export default function Home() {
               <div className="command-shell">
                 <div className="command-top">
                   <div><i /><i /><i /></div>
-                  <span>BUILD SYSTEM / ALVARO SORIA</span>
-                  <b>ONLINE</b>
+                  <span>EXPERIENCIA / ALVARO SORIA</span>
+                  <b>ACTIVO</b>
                 </div>
 
                 <div className="command-intro">
                   <div className="portrait-mini"><img src={portrait} alt="Álvaro Soria" fetchPriority="high" /></div>
-                  <div><small>PRODUCT BUILDER · FULL STACK · AI</small><strong>Entender.<br />Construir.<br /><em>Mejorar.</em></strong></div>
+                  <div><small>PROCESOS · SOFTWARE · DATA · AI</small><strong>Perfil<br />técnico +<br /><em>negocio.</em></strong></div>
                 </div>
 
                 <div className="command-products">
-                  <span className="command-label">PRODUCTOS / ACTIVOS</span>
+                  <span className="command-label">ÁREAS / PROYECTOS</span>
                   {[
-                    ['Valkiria ERP', 'Industria', 'cyan'],
-                    ['TrainIA', 'Sport & fitness', 'orange'],
-                    ['ValkirIA One', 'AI Business OS', 'violet'],
+                    ['CAPEMI', 'Procesos y Gestión IT', 'cyan'],
+                    ['Sistema Central', 'Full stack interno', 'cyan'],
+                    ['Power BI', 'Dashboards y KPIs', 'orange'],
+                    ['Odoo + Integraciones', 'ERP y reporting', 'violet'],
+                    ['Valkiria Project', 'Productos propios', 'violet'],
                   ].map(([name, area, accent]) => (
                     <div className={'command-product ' + accent} key={name}>
                       <i />
@@ -403,18 +473,15 @@ export default function Home() {
                 </div>
 
                 <div className="agent-orchestration">
-                  <div><span className="command-label">ORQUESTACIÓN</span><strong>Agentes trabajando en paralelo.</strong></div>
+                  <div><span className="command-label">ORQUESTACIÓN DE AGENTES</span><strong>Frontend · Backend · QA · Docs</strong></div>
                   <div className="agent-row"><span>FRONTEND</span><i /><span>BACKEND</span><i /><span>QA</span><i /><span>DOCS</span></div>
                 </div>
               </div>
-              <a className="command-link" href={valkiria} target="_blank" rel="noopener noreferrer">
-                Explorar Valkiria Project <FiArrowUpRight />
-              </a>
             </motion.div>
           </div>
 
           <div className="hero-marquee" aria-label="Áreas de trabajo">
-            {['PRODUCT DESIGN', 'FULL STACK', 'AI AGENTS', 'AUTOMATION', 'DATA & BI', 'INTEGRATIONS', 'INFRASTRUCTURE'].map(item => <span key={item}>{item}</span>)}
+            {['FULL STACK', 'POWER BI', 'ODOO', 'AI AGENTS', 'N8N', 'DATA', 'DOCKER', 'CLOUDFLARE'].map(item => <span key={item}>{item}</span>)}
           </div>
         </section>
 
@@ -422,21 +489,20 @@ export default function Home() {
           <div className="section-number">01</div>
           <div className="section-heading">
             <span className="eyebrow">PERFIL</span>
-            <h2>No me quedo en el código.<br /><em>Trabajo sobre el problema completo.</em></h2>
+            <h2>Desarrollo, datos, automatización e infraestructura.</h2>
           </div>
 
           <div className="about-grid">
             <div className="about-lead">
               <p>
-                Mi perfil combina desarrollo, análisis de procesos, automatización, datos e infraestructura.
-                Eso me permite conversar con el usuario que vive el problema y también bajar hasta la implementación técnica.
+                Trabajo en la intersección entre operación y tecnología. Relevo procesos, desarrollo soluciones,
+                conecto sistemas, analizo datos y acompaño la implementación.
               </p>
               <p>
-                Actualmente trabajo en CAPEMI sobre procesos y gestión IT, mientras desarrollo productos propios bajo Valkiria Project.
-                Ese cruce entre industria, producto y tecnología define cómo construyo.
+                En CAPEMI trabajo sobre procesos y gestión IT. En paralelo desarrollo productos propios dentro de Valkiria Project.
               </p>
               <div className="about-links">
-                <a href={linkedin} target="_blank" rel="noopener noreferrer">Ver experiencia en LinkedIn <FiArrowUpRight /></a>
+                <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <FiArrowUpRight /></a>
                 <a href={cv} download="CV-Alvaro-Soria.pdf">Descargar CV <FiDownload /></a>
               </div>
             </div>
@@ -445,33 +511,83 @@ export default function Home() {
               <div className="experience-top"><span>CAPEMI</span><span>2026 — ACTUALIDAD</span></div>
               <h3>Responsable de Procesos<br />y Gestión IT</h3>
               <div className="experience-grid">
-                <span>Aplicaciones internas</span>
+                <span>Desarrollo interno</span>
                 <span>Automatización</span>
-                <span>Business Intelligence</span>
+                <span>Power BI</span>
+                <span>Odoo</span>
                 <span>Infraestructura</span>
-                <span>Integraciones</span>
-                <span>Mejora continua</span>
+                <span>Proveedores IT</span>
               </div>
             </div>
           </div>
 
-          <div className="principles-grid">
-            {principles.map(([number, title, text]) => (
-              <article key={number}>
-                <span>{number}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
+          <div className="method-compact">
+            {[
+              ['01', 'Entender', 'Proceso y necesidad.'],
+              ['02', 'Construir', 'Solución e integración.'],
+              ['03', 'Mejorar', 'Medir, corregir y escalar.'],
+            ].map(([number, title, text]) => (
+              <div key={number}><span>{number}</span><strong>{title}</strong><p>{text}</p></div>
             ))}
+          </div>
+        </section>
+
+        <section id="experience" className="section work-section">
+          <div className="section-number">02</div>
+          <div className="section-heading split-heading">
+            <div>
+              <span className="eyebrow">EXPERIENCIA Y PROYECTOS</span>
+              <h2>Trabajo realizado.</h2>
+            </div>
+            <p>CAPEMI, sistemas internos, BI, datos, automatización, integraciones, IA e infraestructura.</p>
+          </div>
+
+          <div className="experience-projects">
+            {experience.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className="experience-project" key={item.index}>
+                  {item.image && (
+                    <div className="experience-project-image">
+                      <img src={item.image} alt={item.title} loading="lazy" />
+                    </div>
+                  )}
+                  <div className="experience-project-content">
+                    <div className="experience-project-top">
+                      <span>{item.index}</span>
+                      <Icon />
+                    </div>
+                    <span className="eyebrow">{item.type}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <div className="tag-row">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+                    {item.link && (
+                      <a className="experience-link" href={item.link} target="_blank" rel="noopener noreferrer">
+                        {item.linkLabel} <FiArrowUpRight />
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="github-archive">
+            <div>
+              <span className="eyebrow">OTROS PROYECTOS</span>
+              <h3>Web, e-commerce, análisis de datos y aprendizaje técnico.</h3>
+              <p>El repositorio de GitHub también conserva proyectos anteriores de desarrollo web, análisis, machine learning y experimentación.</p>
+            </div>
+            <a href={github} target="_blank" rel="noopener noreferrer">Ver GitHub completo <FiGithub /><FiArrowUpRight /></a>
           </div>
         </section>
 
         <section id="products" className="products-section">
           <div className="section products-header">
-            <div className="section-number">02</div>
+            <div className="section-number">03</div>
             <div className="section-heading split-heading">
-              <div><span className="eyebrow">PRODUCTOS PROPIOS · VALKIRIA PROJECT</span><h2>Tres productos.<br /><em>Una misma forma de construir.</em></h2></div>
-              <p>Software diseñado alrededor de operaciones reales: industria, deporte y negocios potenciados por IA.</p>
+              <div><span className="eyebrow">PRODUCTOS PROPIOS · VALKIRIA PROJECT</span><h2>Productos actuales.</h2></div>
+              <p>Valkiria ERP, TrainIA y ValkirIA One.</p>
             </div>
           </div>
 
@@ -488,8 +604,8 @@ export default function Home() {
                       <p>{product.description}</p>
                       <div className="product-proof">{product.proof.map(item => <span key={item}>{item}</span>)}</div>
                       <div className="product-actions">
-                        <a href={valkiria} target="_blank" rel="noopener noreferrer">Ver en Valkiria Project <FiArrowUpRight /></a>
-                        {product.href && <a href={product.href} target="_blank" rel="noopener noreferrer">Abrir producto <FiArrowUpRight /></a>}
+                        <a href={valkiria} target="_blank" rel="noopener noreferrer">Valkiria Project <FiArrowUpRight /></a>
+                        {product.href && <a href={product.href} target="_blank" rel="noopener noreferrer">Abrir TrainIA <FiArrowUpRight /></a>}
                       </div>
                     </div>
                     <ProductVisual productId={product.id} />
@@ -500,41 +616,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" className="section work-section">
-          <div className="section-number">03</div>
-          <div className="section-heading split-heading">
-            <div><span className="eyebrow">IMPACTO / CASOS</span><h2>Del problema operativo<br /><em>a una solución que se usa.</em></h2></div>
-            <p>Una selección de cómo aplico desarrollo, IA, automatización e integración en contextos reales.</p>
-          </div>
-
-          <div className="work-list">
-            {work.map((item) => {
-              const WorkIcon = item.icon;
-              return (
-                <article key={item.index} className="work-card">
-                  <div className="work-index">{item.index}</div>
-                  <div className="work-icon"><WorkIcon /></div>
-                  <div className="work-main">
-                    <span className="eyebrow">{item.type}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                  <div className="work-result">
-                    <span>ENFOQUE</span>
-                    <p>{item.result}</p>
-                    <div>{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
         <section id="stack" className="section stack-section">
           <div className="section-number">04</div>
           <div className="section-heading split-heading">
-            <div><span className="eyebrow">CAPACIDADES</span><h2>Una persona para conectar<br /><em>negocio y ejecución técnica.</em></h2></div>
-            <p>No parto de una herramienta. Elijo el stack según el problema, el contexto y el costo de mantener la solución.</p>
+            <div><span className="eyebrow">STACK</span><h2>Herramientas que uso.</h2></div>
+            <p>Desarrollo, datos, IA, integraciones e infraestructura.</p>
           </div>
 
           <div className="capability-grid">
@@ -552,19 +638,23 @@ export default function Home() {
           </div>
 
           <div className="delivery-strip">
-            <div><FiUsers /><span><strong>Discovery</strong><small>Entender usuario y operación</small></span></div>
+            <div><FiUsers /><span><strong>Relevar</strong><small>Proceso y usuarios</small></span></div>
             <i />
-            <div><FiLayers /><span><strong>Diseño</strong><small>Flujo, datos y arquitectura</small></span></div>
+            <div><FiLayers /><span><strong>Diseñar</strong><small>Flujo y arquitectura</small></span></div>
             <i />
-            <div><FiCode /><span><strong>Build</strong><small>Frontend, backend e integraciones</small></span></div>
+            <div><FiCode /><span><strong>Desarrollar</strong><small>Frontend y backend</small></span></div>
             <i />
-            <div><FiCheckCircle /><span><strong>QA</strong><small>Agentes + revisión funcional</small></span></div>
+            <div><FiCheckCircle /><span><strong>Validar</strong><small>QA y operación</small></span></div>
             <i />
-            <div><FiServer /><span><strong>Deploy</strong><small>Producción, monitoreo e iteración</small></span></div>
+            <div><FiServer /><span><strong>Desplegar</strong><small>Producción e iteración</small></span></div>
           </div>
 
           <div className="tech-cloud" aria-label="Tecnologías">
-            {['React', 'TypeScript', 'JavaScript', 'Node.js', 'Express', 'Python', 'SQL', 'MySQL', 'Power BI', 'Docker', 'Linux', 'GitHub', 'Cloudflare', 'n8n', 'Odoo', 'Ollama', 'Qwen', 'OpenAI', 'REST APIs', 'Webhooks'].map(item => <span key={item}>{item}</span>)}
+            {[
+              'React', 'TypeScript', 'JavaScript', 'Node.js', 'Express', 'Python', 'SQL', 'MySQL', 'MariaDB',
+              'Power BI', 'DAX', 'Power Query', 'Docker', 'Linux', 'GitHub', 'Cloudflare', 'n8n', 'Odoo',
+              'Ollama', 'Qwen', 'OpenAI', 'YOLO', 'REST APIs', 'Webhooks', 'Mercado Pago',
+            ].map(item => <span key={item}>{item}</span>)}
           </div>
         </section>
 
@@ -574,9 +664,10 @@ export default function Home() {
       <footer className="site-footer">
         <div>
           <a className="footer-brand" href="#inicio"><span>AS.</span><strong>Álvaro Soria</strong></a>
-          <p>Software, automatización e IA con contexto de negocio.</p>
+          <p>Software · Datos · IA · Automatización.</p>
         </div>
         <div className="footer-nav">
+          <a href={capemi} target="_blank" rel="noopener noreferrer">CAPEMI <FiArrowUpRight /></a>
           <a href={valkiria} target="_blank" rel="noopener noreferrer">Valkiria Project <FiArrowUpRight /></a>
           <a href={github} target="_blank" rel="noopener noreferrer">GitHub <FiArrowUpRight /></a>
           <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <FiArrowUpRight /></a>
