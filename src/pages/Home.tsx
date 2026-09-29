@@ -27,10 +27,6 @@ import {
   FiZap,
 } from 'react-icons/fi';
 import portrait from '../images/PortafolioProfile1.webp';
-import platform from '../images/centralizado1.png';
-import dining from '../images/Comedor1.png';
-import survey from '../images/encuesta1.png';
-import visualization from '../images/visualization.png';
 import cv from '../images/CV - Alvaro Soria.pdf';
 
 const linkedin = 'https://www.linkedin.com/in/alvaro-rodrigo-soria-casali-60422a135/';
@@ -107,7 +103,6 @@ const experience = [
       'Plataforma interna para centralizar producción, mantenimiento, inventario, reclamos, accesos y circuitos por sector, con roles, trazabilidad y datos compartidos.',
     tags: ['React', 'Node.js', 'SQL', 'Roles', 'Trazabilidad'],
     icon: FiBox,
-    image: platform,
   },
   {
     index: '03',
@@ -128,7 +123,6 @@ const experience = [
       'Tableros para producción, mantenimiento y seguimiento operativo: disponibilidad, MTBF, MTTR, fallas, piezas procesadas, actividades y otros indicadores de gestión.',
     tags: ['Power BI', 'DAX', 'Power Query', 'SQL', 'KPIs'],
     icon: FiBarChart2,
-    image: visualization,
   },
   {
     index: '05',
@@ -141,6 +135,33 @@ const experience = [
   },
   {
     index: '06',
+    type: 'CAPEMI · AUTOMATIZACIÓN OPERATIVA',
+    title: 'Gestión de comedor interno',
+    description:
+      'Sistema para menús, pedidos por empleado, demanda diaria y control de entrega mediante lectura de código de barras.',
+    tags: ['React', 'Node.js', 'SQL', 'Código de barras'],
+    icon: FiCheckCircle,
+  },
+  {
+    index: '07',
+    type: 'CAPEMI · RRHH',
+    title: 'Sistema de clima laboral',
+    description:
+      'Encuestas internas con autenticación, carga de respuestas, visualización estadística y seguimiento de resultados.',
+    tags: ['React', 'Encuestas', 'Autenticación', 'Reportes'],
+    icon: FiUsers,
+  },
+  {
+    index: '08',
+    type: 'DATOS · ANÁLISIS',
+    title: 'Análisis de producción, mantenimiento y datos',
+    description:
+      'Trabajos de análisis sobre ventas, rendimiento productivo, fallas de máquinas, piezas granalladas, actividades y datasets con Python, Excel y BI.',
+    tags: ['Python', 'Excel', 'Power BI', 'SQL', 'Análisis de datos'],
+    icon: FiBarChart2,
+  },
+  {
+    index: '09',
     type: 'IA · DESARROLLO',
     title: 'Orquestación de agentes',
     description:
@@ -149,7 +170,7 @@ const experience = [
     icon: FiCpu,
   },
   {
-    index: '07',
+    index: '10',
     type: 'AUTOMATIZACIÓN · INTEGRACIONES',
     title: 'WhatsApp, n8n, Odoo e IA local',
     description:
@@ -158,7 +179,7 @@ const experience = [
     icon: FiMessageSquare,
   },
   {
-    index: '08',
+    index: '11',
     type: 'INFRAESTRUCTURA · DEPLOY',
     title: 'VPS, Docker, Cloudflare y entornos',
     description:
@@ -167,42 +188,13 @@ const experience = [
     icon: FiServer,
   },
   {
-    index: '09',
+    index: '12',
     type: 'IA · COMPUTER VISION',
     title: 'Visión artificial con cámaras IP',
     description:
       'Detección y conteo de personas y vehículos utilizando streams RTSP, zonas de interés y modelos YOLO.',
     tags: ['Python', 'YOLO', 'RTSP', 'Computer Vision'],
     icon: FiZap,
-  },
-  {
-    index: '10',
-    type: 'CAPEMI · AUTOMATIZACIÓN OPERATIVA',
-    title: 'Gestión de comedor interno',
-    description:
-      'Sistema para menús, pedidos por empleado, demanda diaria y control de entrega mediante lectura de código de barras.',
-    tags: ['React', 'Node.js', 'SQL', 'Código de barras'],
-    icon: FiCheckCircle,
-    image: dining,
-  },
-  {
-    index: '11',
-    type: 'CAPEMI · RRHH',
-    title: 'Sistema de clima laboral',
-    description:
-      'Encuestas internas con autenticación, carga de respuestas, visualización estadística y seguimiento de resultados.',
-    tags: ['React', 'Encuestas', 'Autenticación', 'Reportes'],
-    icon: FiUsers,
-    image: survey,
-  },
-  {
-    index: '12',
-    type: 'DATOS · ANÁLISIS',
-    title: 'Análisis de producción, mantenimiento y datos',
-    description:
-      'Trabajos de análisis sobre ventas, rendimiento productivo, fallas de máquinas, piezas granalladas, actividades y datasets con Python, Excel y BI.',
-    tags: ['Python', 'Excel', 'Power BI', 'SQL', 'Análisis de datos'],
-    icon: FiBarChart2,
   },
 ];
 
@@ -555,11 +547,6 @@ export default function Home() {
               const Icon = item.icon;
               return (
                 <article className="experience-project" key={item.index}>
-                  {item.image && (
-                    <div className="experience-project-image">
-                      <img src={item.image} alt={item.title} loading="lazy" />
-                    </div>
-                  )}
                   <div className="experience-project-content">
                     <div className="experience-project-top">
                       <span>{item.index}</span>
@@ -578,6 +565,75 @@ export default function Home() {
                 </article>
               );
             })}
+          </div>
+
+          <div className="experience-visuals">
+            <div className="experience-visuals-head">
+              <span className="eyebrow">ÁREAS DE TRABAJO</span>
+              <h3>Una vista visual de mi experiencia.</h3>
+            </div>
+
+            <div className="experience-visual-grid">
+              <article className="experience-visual-card visual-industry">
+                <div className="visual-label"><FiSettings /><span>INDUSTRIA · SISTEMAS</span></div>
+                <div className="visual-industry-scene" aria-hidden="true">
+                  <div className="factory-block factory-a" />
+                  <div className="factory-block factory-b" />
+                  <div className="factory-block factory-c" />
+                  <div className="factory-line line-a" />
+                  <div className="factory-line line-b" />
+                  <div className="factory-node node-a" />
+                  <div className="factory-node node-b" />
+                  <div className="factory-node node-c" />
+                </div>
+                <strong>Sistemas internos y operación</strong>
+                <p>Procesos, producción, mantenimiento, inventario y gestión conectados.</p>
+              </article>
+
+              <article className="experience-visual-card visual-bi">
+                <div className="visual-label"><FiBarChart2 /><span>BUSINESS INTELLIGENCE</span></div>
+                <div className="visual-bi-scene" aria-hidden="true">
+                  <div className="bi-kpi"><small>OEE</small><b>86%</b></div>
+                  <div className="bi-bars">
+                    {[42, 68, 55, 82, 73, 91, 78].map((height, index) => <i key={index} style={{ height: height + '%' }} />)}
+                  </div>
+                  <div className="bi-line"><span /><span /><span /><span /></div>
+                </div>
+                <strong>Datos y dashboards</strong>
+                <p>Power BI, SQL, DAX y KPIs para operación y toma de decisiones.</p>
+              </article>
+
+              <article className="experience-visual-card visual-ai">
+                <div className="visual-label"><FiCpu /><span>IA · AUTOMATIZACIÓN</span></div>
+                <div className="visual-ai-scene" aria-hidden="true">
+                  <div className="ai-node main">AI</div>
+                  <div className="ai-node n1">FE</div>
+                  <div className="ai-node n2">BE</div>
+                  <div className="ai-node n3">QA</div>
+                  <div className="ai-node n4">API</div>
+                  <div className="ai-connector c1" />
+                  <div className="ai-connector c2" />
+                  <div className="ai-connector c3" />
+                  <div className="ai-connector c4" />
+                </div>
+                <strong>Agentes e integraciones</strong>
+                <p>Orquestación de agentes, n8n, Odoo, WhatsApp, IA local y APIs.</p>
+              </article>
+
+              <article className="experience-visual-card visual-infra">
+                <div className="visual-label"><FiServer /><span>INFRAESTRUCTURA</span></div>
+                <div className="visual-infra-scene" aria-hidden="true">
+                  <div className="server-rack"><i /><i /><i /><i /></div>
+                  <div className="infra-cloud">CLOUD</div>
+                  <div className="infra-route r1" />
+                  <div className="infra-route r2" />
+                  <div className="infra-endpoint e1" />
+                  <div className="infra-endpoint e2" />
+                </div>
+                <strong>Deploy y entornos</strong>
+                <p>Docker, Linux, VPS, Cloudflare, dominios y producción.</p>
+              </article>
+            </div>
           </div>
 
           <div className="github-archive">
