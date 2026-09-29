@@ -409,19 +409,19 @@ export default function Home() {
 
       <main id="main">
         <section className="hero section" id="inicio">
-          <div className="hero-grid">
+          <div className="hero-linkedin-layout">
             <motion.div
-              className="hero-content"
-              initial={{ opacity: 0, y: 22 }}
+              className="hero-linkedin-copy"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65 }}
+              transition={{ duration: 0.6 }}
             >
               <div className="availability"><i /> DISPONIBLE PARA PROYECTOS FREELANCE Y COLABORACIONES</div>
-              <span className="eyebrow">ÁLVARO SORIA · PORTFOLIO 2026</span>
-              <h1>Entender.<br />Construir.<br /><em>Mejorar.</em></h1>
+              <span className="eyebrow">SOFTWARE · DATA · AI · AUTOMATION</span>
+              <h1>Software, datos e IA<br />aplicados a <em>procesos reales.</em></h1>
               <p className="hero-description">
-                Desarrollo software, sistemas internos, productos SaaS, dashboards, automatizaciones,
-                integraciones e IA aplicada a procesos reales.
+                Desarrollo sistemas internos, productos SaaS, dashboards, automatizaciones e integraciones.
+                Desde el relevamiento hasta producción.
               </p>
 
               <div className="hero-actions">
@@ -430,54 +430,62 @@ export default function Home() {
                 <a className="text-action" href={cv} download="CV-Alvaro-Soria.pdf"><FiDownload /> Descargar CV</a>
               </div>
 
-              <div className="hero-proof">
-                <div><strong>IT</strong><span>Procesos, sistemas<br />e infraestructura</span></div>
-                <div><strong>BI</strong><span>Power BI, SQL<br />y análisis</span></div>
-                <div><strong>AI</strong><span>Agentes, IA local<br />y automatización</span></div>
+              <div className="hero-linkedin-tags" aria-label="Especialidades">
+                <span>Full Stack</span>
+                <span>Power BI</span>
+                <span>Odoo</span>
+                <span>AI Agents</span>
+                <span>n8n</span>
+                <span>Infraestructura</span>
               </div>
             </motion.div>
 
             <motion.div
-              className="hero-command"
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.08 }}
+              className="hero-portrait-stage"
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
             >
-              <div className="command-shell">
-                <div className="command-top">
-                  <div><i /><i /><i /></div>
-                  <span>EXPERIENCIA / ALVARO SORIA</span>
-                  <b>ACTIVO</b>
-                </div>
-
-                <div className="command-intro">
-                  <div className="portrait-mini"><img src={portrait} alt="Álvaro Soria" fetchPriority="high" /></div>
-                  <div><small>PROCESOS · SOFTWARE · DATA · AI</small><strong>Perfil<br />técnico +<br /><em>negocio.</em></strong></div>
-                </div>
-
-                <div className="command-products">
-                  <span className="command-label">ÁREAS / PROYECTOS</span>
-                  {[
-                    ['CAPEMI', 'Procesos y Gestión IT', 'cyan'],
-                    ['Sistema Central', 'Full stack interno', 'cyan'],
-                    ['Power BI', 'Dashboards y KPIs', 'orange'],
-                    ['Odoo + Integraciones', 'ERP y reporting', 'violet'],
-                    ['Valkiria Project', 'Productos propios', 'violet'],
-                  ].map(([name, area, accent]) => (
-                    <div className={'command-product ' + accent} key={name}>
-                      <i />
-                      <span><strong>{name}</strong><small>{area}</small></span>
-                      <b>→</b>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="agent-orchestration">
-                  <div><span className="command-label">ORQUESTACIÓN DE AGENTES</span><strong>Frontend · Backend · QA · Docs</strong></div>
-                  <div className="agent-row"><span>FRONTEND</span><i /><span>BACKEND</span><i /><span>QA</span><i /><span>DOCS</span></div>
-                </div>
+              <div className="hero-portrait-glow" aria-hidden="true" />
+              <div className="hero-portrait-large">
+                <img src={portrait} alt="Álvaro Soria" fetchPriority="high" />
+              </div>
+              <div className="hero-portrait-name">
+                <strong>Álvaro Soria</strong>
+                <span>Córdoba, Argentina</span>
               </div>
             </motion.div>
+
+            <motion.aside
+              className="hero-linkedin-card"
+              initial={{ opacity: 0, x: 18 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.65, delay: 0.12 }}
+            >
+              <span className="eyebrow">PERFIL PROFESIONAL</span>
+              <h2>Álvaro Soria</h2>
+              <p className="hero-role-main">Responsable de Procesos y Gestión IT</p>
+              <p className="hero-role-detail">
+                Desarrollo Full Stack · Business Intelligence · Automatización · Inteligencia Artificial
+              </p>
+
+              <div className="hero-profile-links">
+                <a href={linkedin} target="_blank" rel="noopener noreferrer"><FiLinkedin /> LinkedIn <FiArrowUpRight /></a>
+                <a href={github} target="_blank" rel="noopener noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a>
+              </div>
+
+              <div className="hero-profile-highlights">
+                <div><span>CAPEMI</span><strong>Procesos + Gestión IT</strong></div>
+                <div><span>POWER BI</span><strong>Dashboards + KPIs</strong></div>
+                <div><span>ODOO</span><strong>Integraciones + Reporting</strong></div>
+                <div><span>VALKIRIA</span><strong>Productos propios</strong></div>
+              </div>
+
+              <div className="hero-agent-line">
+                <span>ORQUESTACIÓN DE AGENTES</span>
+                <strong>Frontend · Backend · QA · Docs</strong>
+              </div>
+            </motion.aside>
           </div>
 
           <div className="hero-marquee" aria-label="Áreas de trabajo">
