@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import { MotionConfig, motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 import {
@@ -250,7 +251,7 @@ const capabilities = [
 ];
 
 function ExperienceIllustration({ kind, title }: { kind: string; title: string }) {
-  const meta: Record<string, { label: string; icon: React.ReactNode }> = {
+  const meta: Record<string, { label: string; icon: ReactNode }> = {
     process: { label: 'PROCESOS · IT', icon: <FiLayers /> },
     central: { label: 'SISTEMA CENTRAL', icon: <FiBox /> },
     web: { label: 'WEB · BRAND', icon: <FiGlobe /> },
