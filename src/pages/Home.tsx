@@ -250,22 +250,95 @@ const capabilities = [
 ];
 
 function ExperienceIllustration({ kind, title }: { kind: string; title: string }) {
-  const visualContent: Record<string, { label: string; icon: React.ReactNode; marks: string[] }> = {
-    process: { label: 'PROCESOS · IT', icon: <FiLayers />, marks: ['MAP', 'FLOW', 'IT'] },
-    central: { label: 'SISTEMA CENTRAL', icon: <FiBox />, marks: ['PROD', 'MANT', 'INV'] },
-    web: { label: 'WEB · BRAND', icon: <FiGlobe />, marks: ['WEB', 'SEO', 'BRAND'] },
-    bi: { label: 'POWER BI · KPIs', icon: <FiBarChart2 />, marks: ['OEE', 'MTBF', 'MTTR'] },
-    odoo: { label: 'ODOO · ERP', icon: <FiDatabase />, marks: ['MRP', 'STOCK', 'API'] },
-    food: { label: 'OPERACIÓN · COMEDOR', icon: <FiCheckCircle />, marks: ['MENU', 'PED', 'QR'] },
-    people: { label: 'RRHH · CLIMA', icon: <FiUsers />, marks: ['TEAM', 'DATA', 'UX'] },
-    analytics: { label: 'DATA · ANÁLISIS', icon: <FiBarChart2 />, marks: ['SQL', 'PY', 'BI'] },
-    agents: { label: 'AGENTES · QA', icon: <FiCpu />, marks: ['FE', 'BE', 'QA'] },
-    automation: { label: 'N8N · AUTOMATION', icon: <FiMessageSquare />, marks: ['WA', 'AI', 'API'] },
-    infra: { label: 'INFRA · DEPLOY', icon: <FiServer />, marks: ['VPS', 'DOCKER', 'CF'] },
-    vision: { label: 'COMPUTER VISION', icon: <FiZap />, marks: ['YOLO', 'RTSP', 'CV'] },
+  const meta: Record<string, { label: string; icon: React.ReactNode }> = {
+    process: { label: 'PROCESOS · IT', icon: <FiLayers /> },
+    central: { label: 'SISTEMA CENTRAL', icon: <FiBox /> },
+    web: { label: 'WEB · BRAND', icon: <FiGlobe /> },
+    bi: { label: 'POWER BI · KPIs', icon: <FiBarChart2 /> },
+    odoo: { label: 'ODOO · ERP', icon: <FiDatabase /> },
+    food: { label: 'OPERACIÓN · COMEDOR', icon: <FiCheckCircle /> },
+    people: { label: 'RRHH · CLIMA', icon: <FiUsers /> },
+    analytics: { label: 'DATA · ANÁLISIS', icon: <FiBarChart2 /> },
+    agents: { label: 'AGENTES · QA', icon: <FiCpu /> },
+    automation: { label: 'N8N · AUTOMATION', icon: <FiMessageSquare /> },
+    infra: { label: 'INFRA · DEPLOY', icon: <FiServer /> },
+    vision: { label: 'COMPUTER VISION', icon: <FiZap /> },
   };
 
-  const visual = visualContent[kind] ?? visualContent.process;
+  const visual = meta[kind] ?? meta.process;
+
+  const scene = () => {
+    switch (kind) {
+      case 'process':
+        return <div className="scene-process">
+          <span>NECESIDAD</span><i /><span>PROCESO</span><i /><span>SOLUCIÓN</span><i /><span>MEJORA</span>
+        </div>;
+      case 'central':
+        return <div className="scene-central">
+          <div className="central-hub">CORE</div>
+          {['PROD', 'MANT', 'INV', 'RRHH'].map(item => <span key={item}>{item}</span>)}
+        </div>;
+      case 'web':
+        return <div className="scene-browser">
+          <div className="browser-bar"><i /><i /><i /></div>
+          <div className="browser-hero"><b>CAPEMI</b><span>INDUSTRIA · TECNOLOGÍA</span></div>
+          <div className="browser-lines"><i /><i /><i /></div>
+        </div>;
+      case 'bi':
+        return <div className="scene-bi">
+          <div className="bi-card"><small>OEE</small><b>86%</b></div>
+          <div className="scene-bars">{[42, 68, 55, 82, 73, 91].map((height, index) => <i key={index} style={{ height: height + '%' }} />)}</div>
+          <div className="scene-line"><span /><span /><span /><span /></div>
+        </div>;
+      case 'odoo':
+        return <div className="scene-odoo">
+          <div className="odoo-core">ODOO</div>
+          {['MRP', 'INV', 'SALE', 'API'].map(item => <span key={item}>{item}</span>)}
+          <i className="odoo-link l1" /><i className="odoo-link l2" /><i className="odoo-link l3" /><i className="odoo-link l4" />
+        </div>;
+      case 'food':
+        return <div className="scene-food">
+          <div className="menu-sheet"><b>MENÚ</b><span /><span /><span /></div>
+          <div className="qr-grid">{Array.from({ length: 16 }).map((_, index) => <i key={index} />)}</div>
+        </div>;
+      case 'people':
+        return <div className="scene-people">
+          <div className="people-row">{[1,2,3,4].map(item => <i key={item} />)}</div>
+          <div className="survey-bars"><span /><span /><span /></div>
+        </div>;
+      case 'analytics':
+        return <div className="scene-analytics">
+          <div className="axis x" /><div className="axis y" />
+          {[['18%','24%'],['36%','61%'],['53%','42%'],['69%','72%'],['82%','35%']].map(([left,bottom], index) => <i key={index} style={{ left, bottom }} />)}
+          <div className="trend-line" />
+        </div>;
+      case 'agents':
+        return <div className="scene-agents">
+          <div className="agent-core">AI</div>
+          {['FE', 'BE', 'QA', 'DOC'].map((item, index) => <span className={'agent-node n' + index} key={item}>{item}</span>)}
+        </div>;
+      case 'automation':
+        return <div className="scene-automation">
+          {['WA', 'N8N', 'AI', 'ODOO'].map((item, index) => <div key={item}><span>{item}</span>{index < 3 && <i />}</div>)}
+        </div>;
+      case 'infra':
+        return <div className="scene-infra">
+          <div className="rack">{[1,2,3,4].map(item => <i key={item} />)}</div>
+          <div className="cloud">CLOUD</div>
+          <span className="infra-path" />
+        </div>;
+      case 'vision':
+        return <div className="scene-vision">
+          <div className="camera-frame">
+            <span className="bbox b1">PERSON</span>
+            <span className="bbox b2">VEHICLE</span>
+            <i className="crosshair h" /><i className="crosshair v" />
+          </div>
+        </div>;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className={'experience-illustration illustration-' + kind} role="img" aria-label={'Ilustración representativa: ' + title}>
@@ -273,19 +346,7 @@ function ExperienceIllustration({ kind, title }: { kind: string; title: string }
         <span>{visual.icon}</span>
         <small>{visual.label}</small>
       </div>
-      <div className="illustration-canvas" aria-hidden="true">
-        <div className="illustration-focus">
-          <span>{visual.marks[0]}</span>
-          <strong>{visual.marks[1]}</strong>
-          <small>{visual.marks[2]}</small>
-        </div>
-        <div className="illustration-grid-lines" />
-        <i className="illustration-orbit orbit-one" />
-        <i className="illustration-orbit orbit-two" />
-        <i className="illustration-dot dot-one" />
-        <i className="illustration-dot dot-two" />
-        <i className="illustration-dot dot-three" />
-      </div>
+      <div className="illustration-scene" aria-hidden="true">{scene()}</div>
     </div>
   );
 }
