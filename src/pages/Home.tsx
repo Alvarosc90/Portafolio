@@ -5,7 +5,6 @@ import {
   FiActivity,
   FiArrowRight,
   FiArrowUpRight,
-  FiBarChart2,
   FiBox,
   FiCheckCircle,
   FiCode,
